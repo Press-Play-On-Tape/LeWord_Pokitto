@@ -74,7 +74,7 @@ void Game::title() {
     PD::drawBitmap(73, 11, Images::TitleScreen_R[indexes[4]]);
     PD::drawBitmap(90, 11, Images::TitleScreen_D[indexes[5]]);
 
-    PD::drawBitmap(-9, 29, Images::TitleScreen_Lower);
+    PD::drawBitmap(0, 47, Images::TitleScreen_Lower);
     PD::drawBitmap(gamePlayVars.mode == GameMode::English ? 7 : 65, 47, Images::Pointer);
 
     if (titleScreenVars.frameIndex > 0) {
