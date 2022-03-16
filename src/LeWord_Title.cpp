@@ -9,7 +9,7 @@ using PS = Pokitto::Sound;
 
 void Game::title_Init() {
 
-    gameState = GameState::Title;
+    this->gameState = GameState::Title;
 
     titleScreenVars.delay = random(16, 48);
 
@@ -23,27 +23,28 @@ void Game::title() {
 
     if (PC::buttons.pressed(BTN_A)) {
         
-        gameState = GameState::Game_Init; 
+        this->gameState = GameState::Game_Init; 
 
     }
 
-    if (PC::buttons.pressed(BTN_LEFT) && gamePlayVars.mode == GameMode::French) {
+    if (PC::buttons.pressed(BTN_LEFT) && this->gamePlayVars .mode == GameMode::French) {
         
-        gamePlayVars.mode = GameMode::English; 
-        this->cookie->setMode(gamePlayVars.mode);
+        this->gamePlayVars .mode = GameMode::English; 
+        this->cookie->setMode(this->gamePlayVars .mode);
 
     }
 
-    if (PC::buttons.pressed(BTN_RIGHT) && gamePlayVars.mode == GameMode::English) {
+    if (PC::buttons.pressed(BTN_RIGHT) && this->gamePlayVars .mode == GameMode::English) {
         
-        gamePlayVars.mode = GameMode::French; 
-        this->cookie->setMode(gamePlayVars.mode);
+        this->gamePlayVars .mode = GameMode::French; 
+        this->cookie->setMode(this->gamePlayVars .mode);
 
     }
 
     if (PC::buttons.pressed(BTN_B)) {
         
-        gameState = GameState::Stats_Init; 
+        this->statisticsScreenVars.numberOfAttempts = 7;
+        this->gameState = GameState::Stats_Init; 
 
     }
 
@@ -75,7 +76,7 @@ void Game::title() {
     PD::drawBitmap(90, 11, Images::TitleScreen_D[indexes[5]]);
 
     PD::drawBitmap(0, 47, Images::TitleScreen_Lower);
-    PD::drawBitmap(gamePlayVars.mode == GameMode::English ? 7 : 65, 47, Images::Pointer);
+    PD::drawBitmap(this->gamePlayVars .mode == GameMode::English ? 7 : 65, 47, Images::Pointer);
 
     if (titleScreenVars.frameIndex > 0) {
     

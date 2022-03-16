@@ -101,3 +101,8 @@ enum KeyboardState : uint8_t {
     StartHiding,
     Hiding
 };
+
+enum class StatisticsMode : uint8_t {
+    PageOne,
+    PageTwo,
+};

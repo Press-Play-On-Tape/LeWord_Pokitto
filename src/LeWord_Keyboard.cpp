@@ -27,7 +27,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
         uint8_t x = xPos * (key_Width - 1) + (key_PosY[i] >= 2 ? 4 : 0) + (key_PosY[i] == 3 ? -2 : 0);
         uint8_t y = yPos * (key_Height - 1); 
 
-        switch (gamePlayVars.keyboard.keys[i]) {
+        switch (this->gamePlayVars .keyboard.keys[i]) {
 
             case KeyState::Visible:
                 PD::setColor(6, 0);
@@ -55,7 +55,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
                 
         }
 
-        if (xPos == gamePlayVars.keyboard.xCursor && yPos == gamePlayVars.keyboard.yCursor && gamePlayVars.keyboard.state == KeyboardState::Showing) {
+        if (xPos == this->gamePlayVars .keyboard.xCursor && yPos == this->gamePlayVars .keyboard.yCursor && this->gamePlayVars .keyboard.state == KeyboardState::Showing) {
 
             PD::setColor(12, 0);
             PD::drawRect(x + xOffset + 1, y + yOffset + 2, key_Width - 3, key_Height - 3);
@@ -72,7 +72,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     PD::fillRect(xOffset + 1, 2 * (key_Height - 1) + 2 + yOffset, key_Width, key_Height - 3);
     PD::drawBitmap(xOffset, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[26]);
 
-    if (gamePlayVars.keyboard.xCursor == 0 && gamePlayVars.keyboard.yCursor == 2) {
+    if (this->gamePlayVars .keyboard.xCursor == 0 && this->gamePlayVars .keyboard.yCursor == 2) {
         PD::setColor(12, 0);
         PD::drawRect(xOffset + 1, yOffset + (2 * (key_Height - 1)) + 2, key_Width - 1, key_Height - 3);
     }
@@ -84,7 +84,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     PD::fillRect(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 3, 2 * (key_Height - 1) + 2 + yOffset, key_Width + 5, key_Height - 3);
     PD::drawBitmap(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 2, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[27]);
 
-    if (gamePlayVars.keyboard.xCursor == 8 && gamePlayVars.keyboard.yCursor == 2) {
+    if (this->gamePlayVars .keyboard.xCursor == 8 && this->gamePlayVars .keyboard.yCursor == 2) {
         PD::setColor(12, 0);
         PD::drawRect(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 3, 2 * (key_Height - 1) + 2 + yOffset, key_Width + 4, key_Height - 3);
     }
@@ -94,7 +94,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     PD::drawFastVLine(xOffset - 1, yOffset + 1, 50);
     PD::drawFastVLine(xOffset + 91, yOffset + 1, 50);
 
-    switch (gamePlayVars.keyboard.state) {
+    switch (this->gamePlayVars .keyboard.state) {
 
         case KeyboardState::Showing:
         case KeyboardState::StartShowing:

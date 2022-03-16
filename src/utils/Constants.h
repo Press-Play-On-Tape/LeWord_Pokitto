@@ -1,9 +1,9 @@
 #pragma once
 
 #define SOUNDS
-#define COOKIE_INITIALISED 44
+#define COOKIE_INITIALISED 47
 
-#define _USE_BRINE
+#define USE_BRINE
 /* TEASE PRUNE DRONE CRIME BLINK and BRIEF or BRINE */
 
 namespace Constants {

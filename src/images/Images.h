@@ -70,11 +70,26 @@ namespace Images {
     #include "TooManyAttempts_FR.h"
     #include "Quit_EN.h"
     #include "Quit_FR.h"
-    #include "Statistics_EN.h"
-    #include "Statistics_FR.h"
     #include "Pointer.h"
     #include "Arrow_Up.h"
     #include "Arrow_Down.h"
+
+    #include "statistics/Statistics_EN.h"
+    #include "statistics/Statistics_FR.h"
+    #include "statistics/Statistics_Header_EN.h"
+    #include "statistics/Statistics_Header_FR.h"
+    #include "statistics/Statistics_Vert.h"
+
+    #include "statistics/Stats_00.h"
+    #include "statistics/Stats_01.h"
+    #include "statistics/Stats_02.h"
+    #include "statistics/Stats_03.h"
+    #include "statistics/Stats_04.h"
+    #include "statistics/Stats_05.h"
+    #include "statistics/Stats_06.h"
+    #include "statistics/Stats_07.h"
+    #include "statistics/Stats_08.h"
+    #include "statistics/Stats_09.h"
 
     #include "title/TitleScreen_Lower.h"
     #include "title/TitleScreen_L_00.h"
@@ -128,6 +143,19 @@ namespace Images {
     #include "man/Word_00.h"
     #include "man/Word_01.h"
     #include "man/LightBulb.h"
+
+    const uint8_t * const Stats[10] = {
+        Stats_00,
+        Stats_01,
+        Stats_02,
+        Stats_03,
+        Stats_04,
+        Stats_05,
+        Stats_06,
+        Stats_07,
+        Stats_08,
+        Stats_09,
+    };
 
     const uint8_t * const Keyboard_B[28] = {
         Keyboard_B_01,

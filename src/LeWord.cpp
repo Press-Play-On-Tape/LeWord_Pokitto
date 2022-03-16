@@ -10,8 +10,6 @@ using PS = Pokitto::Sound;
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
 
-GameState gameState = GameState::SplashScreen_Init;
-
 void Game::setup(GameCookie *cookie) {
 
     this->cookie = cookie;
@@ -40,7 +38,7 @@ void Game::loop() {
 
             // sounds.playTheme(2, this->cookie->sfx, true, true);
             title_Init();
-            this->gameState = GameState::Title;
+            this-> gameState = GameState::Title;
             [[fallthrough]]
 
         case GameState::Title:
@@ -51,7 +49,7 @@ void Game::loop() {
         case GameState::Game_Init:
 
             game_Init();
-            this->gameState = GameState::Game_Play;
+            this-> gameState = GameState::Game_Play;
             [[fallthrough]]
 
         case GameState::Game_Play:

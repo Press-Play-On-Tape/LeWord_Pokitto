@@ -14,7 +14,7 @@ using PS = Pokitto::Sound;
 void Game::splashScreen_Init() {
 
     splashScreenVars.counter = 0;
-    gameState = GameState::SplashScreen;
+    this->gameState = GameState::SplashScreen;
 
 }
 
@@ -24,14 +24,14 @@ void Game::splashScreen_Init() {
 //
 void Game::splashScreen() { 
 
-    if (PC::buttons.repeat(BTN_A))  { this->gameState = GameState::Title_Init; }
+    if (PC::buttons.repeat(BTN_A))  { this-> gameState = GameState::Title_Init; }
 
 
     auto justPressed = PC::buttons.repeat(BTN_A) || PC::buttons.repeat(BTN_B) || PC::buttons.repeat(BTN_C);
 
     if (justPressed > 0) {
 
-        this->gameState = GameState::Title_Init; 
+        this-> gameState = GameState::Title_Init; 
 
     }
     

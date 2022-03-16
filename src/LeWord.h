@@ -9,6 +9,7 @@
 #include "utils/Structs.h"
 //#include "src/sounds/Sounds.h"
 #include "utils/SFXVolumeSource.hpp"
+#include "utils/Utils.h"
 #include "dictionary/Dictionary.h"
 #include "animations/Animations.h"
 
@@ -21,6 +22,8 @@ class Game {
     private:
         TitleScreenVars titleScreenVars;
         SplashScreenVars splashScreenVars;
+        StatisticsScreenVars statisticsScreenVars;
+
         GamePlayVars gamePlayVars;
         GameState gameState = GameState::SplashScreen_Init;
         GameCookie *cookie;
@@ -48,6 +51,7 @@ class Game {
         void title_Init();
         void title(); 
         void moveCursor(Direction direction);
+        uint8_t textWidth(uint16_t number);
         CheckState checkWord();
 };
 

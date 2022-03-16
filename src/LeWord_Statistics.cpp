@@ -9,7 +9,8 @@ using PS = Pokitto::Sound;
 
 void Game::statistics_Init() {
 
-    gameState = GameState::Stats;
+    this->statisticsScreenVars.reset();
+    this->gameState = GameState::Stats;
 
 }
 
@@ -25,7 +26,7 @@ void Game::statistics() {
     uint16_t maxStreak = 0;
     uint16_t percent = 0;
 
-    if (gamePlayVars.mode == GameMode::English) {
+    if (this->gamePlayVars .mode == GameMode::English) {
 
         gamesWon = this->cookie->gamesWon_EN;
         gamesPlayed = this->cookie->gamesPlayed_EN;
@@ -46,7 +47,17 @@ void Game::statistics() {
 
     if (PC::buttons.pressed(BTN_A)) {
         
-        gameState = GameState::Title_Init; 
+        switch (this->statisticsScreenVars.mode) {
+
+            case StatisticsMode::PageOne:
+                this->statisticsScreenVars.mode = StatisticsMode::PageTwo;
+                break;
+
+            case StatisticsMode::PageTwo:
+                this->gameState = GameState::Title_Init; 
+                break;
+
+        }
 
     }
 
@@ -56,45 +67,119 @@ void Game::statistics() {
 
     if (PC::buttons.repeat(BTN_B, 1)) {
 
-        gamePlayVars.cancelButton++;
+        this->gamePlayVars .cancelButton++;
 
-        if (gamePlayVars.cancelButton == 64) {
-            this->cookie->initialise(gamePlayVars.mode);
+        if (this->gamePlayVars .cancelButton == 64) {
+            this->cookie->initialise(this->gamePlayVars .mode);
         }
 
     }
     else {
 
-        gamePlayVars.cancelButton = false;
+        this->gamePlayVars .cancelButton = false;
 
     }
 
-    if (gamePlayVars.mode == GameMode::English) {
-        PD::drawBitmap(-9, 0, Images::Statistics_EN);
+        
+    switch (this->statisticsScreenVars.mode) {
+
+        case StatisticsMode::PageOne:
+
+            if (this->gamePlayVars .mode == GameMode::English) {
+                PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
+                PD::drawBitmap(0, 8, Images::Statistics_EN);
+            }
+            else {
+                PD::drawBitmap(0, 0, Images::Statistics_Header_FR);
+                PD::drawBitmap(0, 8, Images::Statistics_FR);
+            }
+
+            PD::setColor(12);
+            PD::setCursor(18, 14);
+            if (gamesPlayed < 100) { PD::print("0"); }
+            if (gamesPlayed < 10)  { PD::print("0"); }
+            PD::print(gamesPlayed);
+
+            PD::setCursor(71, 14);
+            if (percent < 100) { PD::print("0"); }
+            if (percent < 10)  { PD::print("0"); }
+            PD::print(percent);
+
+            PD::setCursor(18, 39);
+            if (currentStreak < 100) { PD::print("0"); }
+            if (currentStreak < 10)  { PD::print("0"); }
+            PD::print(currentStreak);
+
+            PD::setCursor(71, 39);
+            if (maxStreak < 100) { PD::print("0"); }
+            if (maxStreak < 10)  {PD::print("0"); }
+            PD::print(maxStreak);
+
+            break;
+
+        case StatisticsMode::PageTwo:
+
+            if (this->gamePlayVars .mode == GameMode::English) {
+                PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
+            }
+            else {
+                PD::drawBitmap(0, 0, Images::Statistics_Header_FR);
+            }
+
+            PD::drawBitmap(2, 20, Images::Statistics_Vert);
+
+            for (uint8_t i = 0; i < 6; i++) {
+
+                uint8_t width = this->cookie->getPercent(this->gamePlayVars .mode, i);
+                uint16_t val = this->cookie->getPercentVal(this->gamePlayVars .mode, i);
+                uint8_t textWidth = this->textWidth(val);
+
+                if (val != 0 && textWidth > width) width = textWidth + 1;
+
+                if (i + 1 == this->statisticsScreenVars.numberOfAttempts) {
+                    PD::setColor(12, 0);
+                }
+                else {
+                    PD::setColor(5, 0);
+                }
+
+                PD::fillRect(12, 20 + (i * 8), width == 0 ? 1 : width, 6);
+
+                if (val > 0) {
+
+                    uint8_t digits[5];
+                    Utils::extractDigits(digits, val);
+                    bool firstDigitRendered = false;
+
+                    for (int8_t j = 4; j >= 0; j--) {
+
+                        if (digits[j] != 0 || firstDigitRendered) {
+
+                            PD::drawBitmap(12 + width - (j * 4) - 5, 20 + (i * 8), Images::Stats[digits[j]]);
+                            firstDigitRendered = true;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            break;
+
     }
-    else {
-        PD::drawBitmap(-9, 0, Images::Statistics_FR);
-    }
 
-    PD::setColor(12);
-    PD::setCursor(20, 14);
-    if (gamesPlayed < 100) { PD::print("0"); }
-    if (gamesPlayed < 10)  { PD::print("0"); }
-    PD::print(gamesPlayed);
+}
 
-    PD::setCursor(73, 14);
-    if (percent < 100) { PD::print("0"); }
-    if (percent < 10)  { PD::print("0"); }
-    PD::print(percent);
+uint8_t Game::textWidth(uint16_t number) {
 
-    PD::setCursor(20, 39);
-    if (currentStreak < 100) { PD::print("0"); }
-    if (currentStreak < 10)  { PD::print("0"); }
-    PD::print(currentStreak);
-
-    PD::setCursor(73, 39);
-    if (maxStreak < 100) { PD::print("0"); }
-    if (maxStreak < 10)  {PD::print("0"); }
-    PD::print(maxStreak);
+    if (number >= 100000) return 6 * 4;
+    if (number >= 10000) return 5 * 4;
+    if (number >= 1000) return 4 * 4;
+    if (number >= 100) return 3 * 4;
+    if (number >= 10) return 2 * 4;
+    if (number >= 1) return 1 * 4;
+    return 0;
 
 }
