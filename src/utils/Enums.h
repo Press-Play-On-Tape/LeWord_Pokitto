@@ -41,7 +41,7 @@ inline SoundSettings operator--(SoundSettings &c, int) {
     return result;
 }
 
-enum GameState : uint8_t {
+enum class GameState : uint8_t {
 	SplashScreen_Init,
 	SplashScreen,
 	Title_Init,
@@ -52,17 +52,17 @@ enum GameState : uint8_t {
     Stats
 };
     
-enum Language : uint8_t {
+enum class Language : uint8_t {
 	English,
     French,
 };
    
-enum GameMode : uint8_t {
+enum class GameMode : uint8_t {
 	Single,
     NineHole,
 };
 
-enum AnimationSequence : uint8_t {
+enum class AnimationSequence : uint8_t {
 	Think_L,
     Think_R,
     Walk_LR,

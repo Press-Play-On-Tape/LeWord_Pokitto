@@ -3,13 +3,14 @@
 #define SOUNDS
 #define COOKIE_INITIALISED 47
 
-#define USE_BRINE
+#define _USE_BRINE
 /* TEASE PRUNE DRONE CRIME BLINK and BRIEF or BRINE */
 
 namespace Constants {
 
-    constexpr uint8_t guess_Left = 25;
-    constexpr uint8_t guess_Spacing = 12;
+    constexpr uint8_t guess_Left = 23;
+    constexpr uint8_t guess_V_Spacing = 14;
+    constexpr uint8_t guess_H_Spacing = 13;
 
     constexpr uint8_t key_Map[3][10] = { 
         { 16, 22,  4, 17, 19, 24, 20,  8, 14,  15, },
