@@ -13,31 +13,31 @@ void Game::moveCursor(Direction direction) {
 
         case Direction::Right:
     
-            switch (this->gamePlayVars .keyboard.yCursor) {
+            switch (this->gamePlayVars.keyboard.yCursor) {
 
                 case 0:
-                    if (this->gamePlayVars .keyboard.xCursor < 9) {
+                    if (this->gamePlayVars.keyboard.xCursor < 9) {
                         
-                        this->gamePlayVars .keyboard.xCursor++;
+                        this->gamePlayVars.keyboard.xCursor++;
 
                     }
                     else {
 
-                        this->gamePlayVars .keyboard.xCursor = 0;
+                        this->gamePlayVars.keyboard.xCursor = 0;
 
                     }
                     break;
 
                 case 1:
                 case 2:
-                    if (this->gamePlayVars .keyboard.xCursor < 8) {
+                    if (this->gamePlayVars.keyboard.xCursor < 8) {
                         
-                        this->gamePlayVars .keyboard.xCursor++;
+                        this->gamePlayVars.keyboard.xCursor++;
 
                     }
                     else {
 
-                        this->gamePlayVars .keyboard.xCursor = 0;
+                        this->gamePlayVars.keyboard.xCursor = 0;
 
                     }
                     break;
@@ -48,17 +48,17 @@ void Game::moveCursor(Direction direction) {
 
         case Direction::Left:
     
-            switch (this->gamePlayVars .keyboard.yCursor) {
+            switch (this->gamePlayVars.keyboard.yCursor) {
 
                 case 0:
-                    if (this->gamePlayVars .keyboard.xCursor > 0) {
+                    if (this->gamePlayVars.keyboard.xCursor > 0) {
 
-                        this->gamePlayVars .keyboard.xCursor--;
+                        this->gamePlayVars.keyboard.xCursor--;
 
                     }
                     else {
 
-                        this->gamePlayVars .keyboard.xCursor = 9;
+                        this->gamePlayVars.keyboard.xCursor = 9;
 
                     }
 
@@ -66,14 +66,14 @@ void Game::moveCursor(Direction direction) {
 
                 case 1:
                 case 2:
-                    if (this->gamePlayVars .keyboard.xCursor > 0) {
+                    if (this->gamePlayVars.keyboard.xCursor > 0) {
 
-                        this->gamePlayVars .keyboard.xCursor--;
+                        this->gamePlayVars.keyboard.xCursor--;
 
                     }
                     else {
 
-                        this->gamePlayVars .keyboard.xCursor = 8;
+                        this->gamePlayVars.keyboard.xCursor = 8;
 
                     }
 
@@ -85,22 +85,22 @@ void Game::moveCursor(Direction direction) {
 
         case Direction::Down:
     
-            switch (this->gamePlayVars .keyboard.yCursor) {
+            switch (this->gamePlayVars.keyboard.yCursor) {
 
                 case 0:
-                    if (this->gamePlayVars .keyboard.xCursor == 9) {
+                    if (this->gamePlayVars.keyboard.xCursor == 9) {
                         
-                        this->gamePlayVars .keyboard.yCursor++;
-                        this->gamePlayVars .keyboard.xCursor--;
+                        this->gamePlayVars.keyboard.yCursor++;
+                        this->gamePlayVars.keyboard.xCursor--;
 
                     }
                     else {
-                        this->gamePlayVars .keyboard.yCursor++;
+                        this->gamePlayVars.keyboard.yCursor++;
                     }
                     break;
 
                 case 1:
-                    this->gamePlayVars .keyboard.yCursor++;
+                    this->gamePlayVars.keyboard.yCursor++;
                     break;
 
             }
@@ -109,29 +109,29 @@ void Game::moveCursor(Direction direction) {
 
         case Direction::Up:
     
-            if (this->gamePlayVars .keyboard.yCursor == 0) {
+            if (this->gamePlayVars.keyboard.yCursor == 0) {
 
-                this->gamePlayVars .keyboard.state = KeyboardState::StartHiding;
+                this->gamePlayVars.keyboard.state = KeyboardState::StartHiding;
                 break;
 
             }
             else {
 
-                switch (this->gamePlayVars .keyboard.yCursor) {
+                switch (this->gamePlayVars.keyboard.yCursor) {
 
                     case 0:
                     case 2:
-                        if (this->gamePlayVars .keyboard.xCursor == 9) {
-                            this->gamePlayVars .keyboard.yCursor--;
-                            this->gamePlayVars .keyboard.xCursor--;
+                        if (this->gamePlayVars.keyboard.xCursor == 9) {
+                            this->gamePlayVars.keyboard.yCursor--;
+                            this->gamePlayVars.keyboard.xCursor--;
                         }
                         else {
-                            this->gamePlayVars .keyboard.yCursor--;
+                            this->gamePlayVars.keyboard.yCursor--;
                         }
                         break;
 
                     case 1:
-                        this->gamePlayVars .keyboard.yCursor--;
+                        this->gamePlayVars.keyboard.yCursor--;
                         break;
 
 
@@ -154,9 +154,9 @@ CheckState Game::checkWord() {
     uint8_t answer[5];
     
     for (uint8_t i = 0; i < 5; i++) {
-        guessWord[i] = this->gamePlayVars .guesses.chars[this->gamePlayVars .guesses.yCursor][i];
-        answer[i] = this->gamePlayVars .selectedWord[i];
-        this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] = GuessState::Incorrect;
+        guessWord[i] = this->gamePlayVars.guesses.chars[this->gamePlayVars.guesses.yCursor][i];
+        answer[i] = this->gamePlayVars.selectedWord[i];
+        this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::Incorrect;
     }
 
 
@@ -173,7 +173,7 @@ CheckState Game::checkWord() {
     if (isCorrectWord) {
 
         for (uint8_t i = 0; i < 5; i++) {
-            this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] = GuessState::Correct; 
+            this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::Correct; 
         }
 
         return CheckState::CorrectWord;
@@ -186,13 +186,13 @@ CheckState Game::checkWord() {
     uint16_t startPos = ((guessWord[0] - 65) * 26) + (guessWord[1] - 65);
     char status = ' ';
 
-    switch (this->gamePlayVars .mode) {
+    switch (this->gamePlayVars.language) {
 
-        case GameMode::English:
+        case Language::English:
             alphaStart = Dictionary::English_AlphaMap[startPos] * 6;
             break;
 
-        case GameMode::French:
+        case Language::French:
             alphaStart = Dictionary::French_AlphaMap[startPos] * 6;
             break;
 
@@ -234,7 +234,7 @@ CheckState Game::checkWord() {
             for (uint8_t i = 0; i < 5; i++) {
 
                 if (guessWord[i] == answer[i]) { 
-                    this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] = GuessState::Correct; 
+                    this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::Correct; 
                     answer[i] = ' ';
                 }
 
@@ -242,13 +242,13 @@ CheckState Game::checkWord() {
 
             for (uint8_t i = 0; i < 5; i++) {
 
-                if (guessWord[i] != this->gamePlayVars .selectedWord[i]) { 
+                if (guessWord[i] != this->gamePlayVars.selectedWord[i]) { 
 
                     for (uint8_t j = 0; j < 5; j++) {
 
-                        if (this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][j] != GuessState::Correct && testWord[i] == answer[j]) { 
+                        if (this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][j] != GuessState::Correct && testWord[i] == answer[j]) { 
 
-                            this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] = GuessState::WrongPosition;
+                            this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::WrongPosition;
                             answer[j] = ' ';
                             break;
                     
@@ -266,13 +266,13 @@ CheckState Game::checkWord() {
 
             for (uint8_t i = 0; i < 5; i++) {
 
-                if (this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] == GuessState::Incorrect) {
+                if (this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] == GuessState::Incorrect) {
 
                     for (uint8_t j = 0; j < 5; j++) {
 
-                        if (guessWord[i] == this->gamePlayVars .selectedWord[j]) { 
+                        if (guessWord[i] == this->gamePlayVars.selectedWord[j]) { 
 
-                            this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i] = GuessState::Duplicate;
+                            this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::Duplicate;
                     
                         }
                     
@@ -287,19 +287,19 @@ CheckState Game::checkWord() {
 
             for (uint8_t i = 0; i < 5; i++) {
 
-                switch (this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][i]) {
+                switch (this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i]) {
 
                     case GuessState::Incorrect: 
-                        this->gamePlayVars .keyboard.keys[guessWord[i] - 65] = KeyState::Invisible;
+                        this->gamePlayVars.keyboard.keys[guessWord[i] - 65] = KeyState::Invisible;
                         break;
 
                     case GuessState::Correct: 
-                        this->gamePlayVars .keyboard.keys[guessWord[i] - 65] = KeyState::Correct;
+                        this->gamePlayVars.keyboard.keys[guessWord[i] - 65] = KeyState::Correct;
                         break;
 
                     case GuessState::WrongPosition: 
-                        if (this->gamePlayVars .keyboard.keys[guessWord[i] - 65] == KeyState::Visible) {
-                            this->gamePlayVars .keyboard.keys[guessWord[i] - 65] = KeyState::WrongPosition;
+                        if (this->gamePlayVars.keyboard.keys[guessWord[i] - 65] == KeyState::Visible) {
+                            this->gamePlayVars.keyboard.keys[guessWord[i] - 65] = KeyState::WrongPosition;
                         }
                         break;
             
@@ -312,9 +312,9 @@ CheckState Game::checkWord() {
 
             for (uint8_t j = 0; j < 5; j++) {
 
-                if (this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][j] == GuessState::Duplicate) { 
+                if (this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][j] == GuessState::Duplicate) { 
 
-                    this->gamePlayVars .guesses.state[this->gamePlayVars .guesses.yCursor][j] = GuessState::Incorrect;
+                    this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][j] = GuessState::Incorrect;
             
                 }
             

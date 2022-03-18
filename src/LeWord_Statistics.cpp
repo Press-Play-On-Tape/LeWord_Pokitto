@@ -26,7 +26,7 @@ void Game::statistics() {
     uint16_t maxStreak = 0;
     uint16_t percent = 0;
 
-    if (this->gamePlayVars .mode == GameMode::English) {
+    if (this->gamePlayVars.language == Language::English) {
 
         gamesWon = this->cookie->gamesWon_EN;
         gamesPlayed = this->cookie->gamesPlayed_EN;
@@ -67,16 +67,16 @@ void Game::statistics() {
 
     if (PC::buttons.repeat(BTN_B, 1)) {
 
-        this->gamePlayVars .cancelButton++;
+        this->gamePlayVars.cancelButton++;
 
-        if (this->gamePlayVars .cancelButton == 64) {
-            this->cookie->initialise(this->gamePlayVars .mode);
+        if (this->gamePlayVars.cancelButton == 64) {
+            this->cookie->initialise(this->gamePlayVars.language);
         }
 
     }
     else {
 
-        this->gamePlayVars .cancelButton = false;
+        this->gamePlayVars.cancelButton = false;
 
     }
 
@@ -85,7 +85,7 @@ void Game::statistics() {
 
         case StatisticsMode::PageOne:
 
-            if (this->gamePlayVars .mode == GameMode::English) {
+            if (this->gamePlayVars.language == Language::English) {
                 PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
                 PD::drawBitmap(0, 8, Images::Statistics_EN);
             }
@@ -119,7 +119,7 @@ void Game::statistics() {
 
         case StatisticsMode::PageTwo:
 
-            if (this->gamePlayVars .mode == GameMode::English) {
+            if (this->gamePlayVars.language == Language::English) {
                 PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
             }
             else {
@@ -130,8 +130,8 @@ void Game::statistics() {
 
             for (uint8_t i = 0; i < 6; i++) {
 
-                uint8_t width = this->cookie->getPercent(this->gamePlayVars .mode, i);
-                uint16_t val = this->cookie->getPercentVal(this->gamePlayVars .mode, i);
+                uint8_t width = this->cookie->getPercent(this->gamePlayVars.language, i);
+                uint16_t val = this->cookie->getPercentVal(this->gamePlayVars.language, i);
                 uint8_t textWidth = this->textWidth(val);
 
                 if (val != 0 && textWidth > width) width = textWidth + 1;

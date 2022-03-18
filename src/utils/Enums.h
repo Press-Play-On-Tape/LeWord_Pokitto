@@ -52,9 +52,14 @@ enum GameState : uint8_t {
     Stats
 };
     
-enum GameMode : uint8_t {
+enum Language : uint8_t {
 	English,
     French,
+};
+   
+enum GameMode : uint8_t {
+	Single,
+    NineHole,
 };
 
 enum AnimationSequence : uint8_t {
@@ -105,4 +110,9 @@ enum KeyboardState : uint8_t {
 enum class StatisticsMode : uint8_t {
     PageOne,
     PageTwo,
+};
+
+enum class TitleScreenSettingsMode : uint8_t {
+    Language,
+    GameMode,
 };

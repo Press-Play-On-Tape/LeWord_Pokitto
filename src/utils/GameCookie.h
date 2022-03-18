@@ -11,6 +11,7 @@ class GameCookie : public Pokitto::Cookie {
 	public:
 
 		uint8_t initialised;
+		Language Language;
 		GameMode gameMode;
 
 		uint16_t gamesWon_EN = 0;
@@ -30,6 +31,10 @@ class GameCookie : public Pokitto::Cookie {
 		void initialise() {
 
 			this->initialised = COOKIE_INITIALISED;
+
+			this->language = Language::English;
+			this->gameMode = GameMode::Single;
+
 			this->gamesWon_EN = 0;
 			this->gamesPlayed_EN = 0;
 			this->currentStreak_EN = 0;
@@ -51,11 +56,11 @@ class GameCookie : public Pokitto::Cookie {
 
 		}
 
-		void initialise(GameMode gameMode) {
+		void initialise(Language Language) {
 
-			switch (gameMode) {
+			switch (Language) {
 
-				case GameMode::English:
+				case Language::English:
 
 					this->initialised = COOKIE_INITIALISED;
 					this->gamesWon_EN = 0;
@@ -69,7 +74,7 @@ class GameCookie : public Pokitto::Cookie {
 
 					break;
 				
-				case GameMode::French:
+				case Language::French:
 
 					this->gamesWon_FR = 0;
 					this->gamesPlayed_FR = 0;
@@ -87,9 +92,9 @@ class GameCookie : public Pokitto::Cookie {
 
 		}
 
-		void increaseCorrectWords(GameMode gameMode, uint8_t numberOfGuesses) {
+		void increaseCorrectWords(Language Language, uint8_t numberOfGuesses) {
 
-			if (gameMode == GameMode::English) {
+			if (Language == Language::English) {
 
 				this->gamesWon_EN++;
 				this->gamesPlayed_EN++;
@@ -112,12 +117,12 @@ class GameCookie : public Pokitto::Cookie {
 
 		}
 
-		void resetWiningStreak(GameMode gameMode) {
+		void resetWiningStreak(Language Language) {
 
 			uint16_t gamesPlayed = 0;
 			uint16_t currentStreak = 0;
 
-			if (gameMode == GameMode::English) {
+			if (Language == Language::English) {
 
 				this->gamesPlayed_EN++;
 				this->currentStreak_EN = 0;
@@ -134,20 +139,20 @@ class GameCookie : public Pokitto::Cookie {
 
 		}
 
-		void setMode(GameMode gameMode) {
+		void setMode(Language Language) {
 
-			this->gameMode = gameMode;
+			this->Language = Language;
 			this->saveCookie();
 
 		}
 
-		uint8_t getPercent(GameMode gameMode, uint8_t val) {
+		uint8_t getPercent(Language Language, uint8_t val) {
 
 			uint16_t high = 0;
 
-			switch (gameMode) {
+			switch (Language) {
 
-				case GameMode::English:
+				case Language::English:
 
 					for (uint8_t i = 0; i < 6; i++) {
 						if (distribution_EN[i] > high) high = distribution_EN[i];
@@ -157,7 +162,7 @@ class GameCookie : public Pokitto::Cookie {
 
 					return (distribution_EN[val] * 90 / high);
 
-				case GameMode::French:
+				case Language::French:
 
 					for (uint8_t i = 0; i < 6; i++) {
 						if (distribution_FR[i] > high) high = distribution_FR[i];
@@ -173,17 +178,17 @@ class GameCookie : public Pokitto::Cookie {
 
 		}
 
-		uint16_t getPercentVal(GameMode gameMode, uint8_t val) {
+		uint16_t getPercentVal(Language Language, uint8_t val) {
 
 			uint16_t high = 0;
 
-			switch (gameMode) {
+			switch (Language) {
 
-				case GameMode::English:
+				case Language::English:
 
 					return distribution_EN[val];
 
-				case GameMode::French:
+				case Language::French:
 
 					return distribution_FR[val];
 
