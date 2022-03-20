@@ -27,17 +27,17 @@ void Game::title() {
 
     }
 
-    if (PC::buttons.pressed(BTN_LEFT) && this->gamePlayVars.language == Language::French) {
+    if (PC::buttons.pressed(BTN_LEFT) && this->gamePlayVars .mode == GameMode::French) {
         
-        this->gamePlayVars.language = Language::English; 
-        this->cookie->setMode(this->gamePlayVars.language);
+        this->gamePlayVars .mode = GameMode::English; 
+        this->cookie->setMode(this->gamePlayVars .mode);
 
     }
 
-    if (PC::buttons.pressed(BTN_RIGHT) && this->gamePlayVars.language == Language::English) {
+    if (PC::buttons.pressed(BTN_RIGHT) && this->gamePlayVars .mode == GameMode::English) {
         
-        this->gamePlayVars.language = Language::French; 
-        this->cookie->setMode(this->gamePlayVars.language);
+        this->gamePlayVars .mode = GameMode::French; 
+        this->cookie->setMode(this->gamePlayVars .mode);
 
     }
 
@@ -76,7 +76,7 @@ void Game::title() {
     PD::drawBitmap(90, 11, Images::TitleScreen_D[indexes[5]]);
 
     PD::drawBitmap(0, 47, Images::TitleScreen_Lower);
-    PD::drawBitmap(this->gamePlayVars.language == Language::English ? 7 : 65, 47, Images::Pointer);
+    PD::drawBitmap(this->gamePlayVars .mode == GameMode::English ? 7 : 65, 47, Images::Pointer);
 
     if (titleScreenVars.frameIndex > 0) {
     

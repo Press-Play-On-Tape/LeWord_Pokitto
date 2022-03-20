@@ -20,11 +20,10 @@ struct TitleScreenVars {
     uint8_t delay = 0;
     uint8_t charIndex = 0;
     uint8_t frameIndex = 0;
-    TitleScreenSettingsMode mode = TitleScreenSettingsMode::Language;
     
     void reset() {
 
-        // this->cursor = Language::English;
+        // this->cursor = GameMode::English;
 
     }
 
@@ -91,34 +90,19 @@ struct GuessesVar {
 
 struct GamePlayVars {
 
-    Language language = Language::English;
-    GameMode gameMode = GameMode::Single;
+    GameMode mode = GameMode::English;
     KeyboardVars keyboard;
     GuessesVar guesses;
 
     uint8_t showInvalidWord_Count = 0;
     CheckState checkState = CheckState::Normal;
     uint8_t cancelButton = 0;
-    int8_t holes[9];
-    int8_t holesTotal;
 
     #ifdef USE_BRINE
     char selectedWord[5] = { 'B', 'R', 'I', 'N', 'E' };
     #else
     char selectedWord[5] = { ' ', ' ', ' ', ' ', ' ' };
     #endif
-
-    void reset() {
-
-        for (uint8_t i = 0; i < 9; i++) {
-
-            this->holes[i] = 0;
-
-        }
-
-        this->holesTotal = 0;
-
-    }
 
 };
 
