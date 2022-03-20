@@ -344,7 +344,7 @@ void Game::game() {
                                     this->gamePlayVars.guesses.yCursor = this->gamePlayVars.guesses.yCursor + 1;
 
                                     if (this->gamePlayVars.guesses.yCursor >= 4) {
-                                        this->gamePlayVars.guesses.listY = -((this->gamePlayVars.guesses.yCursor - 3) * Constants::guess_V_Spacing);
+                                        this->gamePlayVars.guesses.listY = -((this->gamePlayVars.guesses.yCursor - 3) * Constants::guess_Spacing);
                                     }
 
                                 }
@@ -390,13 +390,6 @@ void Game::game() {
 
     }
 
-
-    PD::setColor(12);
-    PD::fillRect(0, 0, 110, 50);
-    PD::setColor(3);
-    PD::fillRect(0, 50, 110, 38);
-    PD::drawBitmap(0, 30, Images::Background);
-
     drawMan(tmpManX, tmpManB, tmpManI, tmpManP, tmpManK);
     drawGuesses(tmpManK, this->gamePlayVars.guesses.listY);
 
@@ -431,8 +424,8 @@ void Game::game() {
             break;
 
         case CheckState::Quit:
-            // PD::setColor(0);
-            // PD::fillRect(0, 59, 128, 3);
+            PD::setColor(0);
+            PD::fillRect(0, 59, 128, 3);
             if (this->gamePlayVars.language == Language::English) {
                 PD::drawBitmap(20, 61, Images::Quit_EN);
             }
@@ -554,12 +547,10 @@ void Game::drawSolution() {
 
     for (uint8_t x = 0; x < 5; x++) {
 
-        PD::setColor(0, 0);
-        PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing), 72, Constants::guess_H_Spacing - 1, Constants::guess_V_Spacing - 2);
         PD::setColor(3, 7);
-        PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 1, 73, Constants::guess_H_Spacing - 3, Constants::guess_V_Spacing - 4);
+        PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing), 72, Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
         PD::setColor(7, 3);
-        PD::setCursor(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 2, 74);
+        PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 1, 74);
         PD::print(this->gamePlayVars.selectedWord[x]);
 
     }
@@ -616,42 +607,35 @@ void Game::drawGuesses(int8_t xOffset, int8_t yOffset) {
             switch (this->gamePlayVars.guesses.state[y][x]) {
 
                 case GuessState::Correct:
-                    PD::setColor(0, 0);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset, y * Constants::guess_V_Spacing + yOffset + yMove[x], Constants::guess_H_Spacing - 1, Constants::guess_V_Spacing - 2);
                     PD::setColor(3, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset + 1, y * Constants::guess_V_Spacing + yOffset + yMove[x] + 1, Constants::guess_H_Spacing - 3, Constants::guess_V_Spacing - 4);
+                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
                     PD::setColor(7, 3);
-                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 4 + xMove + xOffset - 2, y * Constants::guess_V_Spacing + 3 + yOffset + yMove[x]);
+                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 
                 case GuessState::WrongPosition:
-                    PD::setColor(0, 0);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset, y * Constants::guess_V_Spacing + yOffset + yMove[x], Constants::guess_H_Spacing - 1, Constants::guess_V_Spacing - 2);
                     PD::setColor(9, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset + 1, y * Constants::guess_V_Spacing + yOffset + yMove[x] + 1, Constants::guess_H_Spacing - 3, Constants::guess_V_Spacing - 4);
+                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
                     PD::setColor(7, 9);
-                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 4 + xMove + xOffset - 2, y * Constants::guess_V_Spacing + 3 + yOffset + yMove[x]);
+                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 
                 case GuessState::Dashed:
-                    // PD::setColor(0, 0);
-                    // PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset, y * Constants::guess_V_Spacing + yOffset + yMove[x], Constants::guess_H_Spacing - 2, Constants::guess_V_Spacing - 2);
-                    PD::setColor(7, 14);
-                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 4 + xMove + xOffset - 2, y * Constants::guess_V_Spacing + 3 + yOffset + yMove[x]);
+                    PD::setColor(7, 0);
+                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
-                    PD::setColor(0, 0);
-                    PD::drawFastHLine(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset + 1, ((y + 1) * Constants::guess_V_Spacing) - 2 + yOffset + yMove[x], Constants::guess_H_Spacing - 2);
+                    PD::setColor(5, 0);
+                    PD::drawFastHLine(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, ((y + 1) * Constants::guess_Spacing) - 2 + yOffset + yMove[x], Constants::guess_Spacing - 2);
                     break;
 
+
                 default:
-                    PD::setColor(0, 0);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset, y * Constants::guess_V_Spacing + yOffset + yMove[x], Constants::guess_H_Spacing - 1, Constants::guess_V_Spacing - 2);
                     PD::setColor(5, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_H_Spacing) + xMove + xOffset + 1, y * Constants::guess_V_Spacing + yOffset + yMove[x] + 1, Constants::guess_H_Spacing - 3, Constants::guess_V_Spacing - 4);
+                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
                     PD::setColor(7, 5);
-                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_H_Spacing) + 4 + xMove + xOffset - 2, y * Constants::guess_V_Spacing + 3 + yOffset + yMove[x]);
+                    PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 

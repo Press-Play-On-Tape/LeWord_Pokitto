@@ -71,10 +71,8 @@ namespace Images {
     #include "Quit_EN.h"
     #include "Quit_FR.h"
     #include "Pointer.h"
-    #include "Pointer_Deselect.h"
     #include "Arrow_Up.h"
     #include "Arrow_Down.h"
-    #include "Background.h"
 
     #include "statistics/Statistics_EN.h"
     #include "statistics/Statistics_FR.h"

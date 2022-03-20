@@ -13,8 +13,7 @@ using PD = Pokitto::Display;
 void Game::setup(GameCookie *cookie) {
 
     this->cookie = cookie;
-    this->gamePlayVars.language = cookie->language;
-    this->gamePlayVars.gameMode = cookie->gameMode;
+//    this->sounds.connectVolumeControl(1);
 
 }
 

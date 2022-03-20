@@ -6,7 +6,7 @@
     "${workspaceFolder}/**"
    ],
    "defines": [],
-   "compilerPath": "/Applications/Programming/FemtoIDE 3.app/Contents/Resources/app.nw/darwin/arm/bin/arm-none-eabi-g++",
+   "compilerPath": "/Applications/Programming/FemtoIDE.app/Contents/Resources/app.nw/darwin/arm/bin/arm-none-eabi-g++",
    "cStandard": "c11",
    "cppStandard": "c++17",
    "intelliSenseMode": "gcc-arm",
