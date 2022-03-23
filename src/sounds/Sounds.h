@@ -2,6 +2,7 @@
 
 #include <LibAudio>
 #include "../Utils/SFXVolumeSource.hpp"
+#include "Success.h"
 
 struct Sounds {
 
@@ -27,14 +28,7 @@ struct Sounds {
     }
 
     enum class Effects : uint8_t {
-        OpenChest,
-        PickUpCoin,
-        LandOnTop,
-        Jump,
-        Die,
-        OneUp,
-        ButtonPress,
-        Fail,
+        Success
     };
 
 
@@ -142,8 +136,8 @@ struct Sounds {
 
                 switch (soundEffect) {
                     
-                    case Sounds::Effects::OpenChest:
-//                        Audio::play<2>(sfx_08_OpenChest, 255, 1);        
+                    case Sounds::Effects::Success:
+                       Audio::play<2>(sfx_Success, 255, 1);        
                         break;
 
                 }

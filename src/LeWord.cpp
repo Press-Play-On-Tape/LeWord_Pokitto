@@ -15,6 +15,10 @@ void Game::setup(GameCookie *cookie) {
     this->cookie = cookie;
 //    this->sounds.connectVolumeControl(1);
 
+    for (uint8_t i = 0; i < Constants::NumberOfLetters; i++) {
+        this->letters[i].init();
+    }
+
 }
 
 void Game::loop() {
@@ -26,60 +30,143 @@ void Game::loop() {
 
         case GameState::SplashScreen_Init:
 
-            splashScreen_Init();
+            this->splashScreen_Init();
             [[fallthrough]]
 
         case GameState::SplashScreen:
 
-            splashScreen();
+            this->splashScreen();
             break;
 
         case GameState::Title_Init:
 
-            sounds.playTheme(this->cookie->track, this->cookie->sfx, true, true);
-            title_Init();
+            this->sounds.playTheme(this->cookie->track, this->cookie->sfx, true, true);
+            this->title_Init();
             this-> gameState = GameState::Title;
             [[fallthrough]]
 
         case GameState::Title:
 
-            title();
+            this->renderBackground();
+            this->title();
             break;
 
         case GameState::Game_Init:
 
-            game_Init();
+            this->game_Init();
             this-> gameState = GameState::Game_Play;
             [[fallthrough]]
 
         case GameState::Game_Play:
 
-            game();
+            this->renderBackground();
+            this->game();
             break;
 
         case GameState::Pause_Init:
 
-            pause_Init();
+            this->pause_Init();
             this-> gameState = GameState::Pause;
             [[fallthrough]]
 
         case GameState::Pause:
 
-            pause();
+            this->renderBackground();
+            this->pause();
             break;
 
         case GameState::Stats_Init:
 
-            statistics_Init();
+            this->statistics_Init();
             [[fallthrough]]
 
         case GameState::Stats:
 
-            statistics();
+            this->renderBackground();
+            this->statistics();
             break;
 
     }
 
-    sounds.updateFades();
+    this->sounds.updateFades();
+
+
+}
+
+void Game::renderBackground() {
+
+    for (uint8_t i = 0; i < Constants::NumberOfLetters; i++) {
+
+        Letter &letter = this->letters[i];
+
+        switch (letter.direction) {
+
+            case Direction::Left:
+
+                switch (letter.speed) {
+
+                    case 0:
+                        letter.x--;
+                        break;
+
+                    case 1:
+                        if (PC::frameCount % 3 <= 1) {
+                            letter.x--;
+                        }
+                        break;
+
+                    case 2:
+                        if (PC::frameCount % 2 == 0) {
+                            letter.x--;
+                        }
+                        break;
+                }
+
+                if (letter.x < -32) {
+                    letter.size = random(0, 2);
+                    letter.y = random(-32, 88);
+                    letter.x =  random(112, 512);
+                    letter.speed = random(0, 3);    
+                    letter.image = random(0, 23);
+                }
+                break;
+
+            case Direction::Right:
+
+                switch (letter.speed) {
+
+                    case 0:
+                        letter.x++;
+                        break;
+
+                    case 1:
+                        if (PC::frameCount % 3 <= 1) {
+                            letter.x++;
+                        }
+                        break;
+
+                    case 2:
+                        if (PC::frameCount % 2 == 0) {
+                            letter.x++;
+                        }
+                        break;
+
+                }
+
+                if (letter.x >110) {
+                    letter.size = random(0, 2);
+                    letter.y = random(-32, 88);
+                    letter.x =  random(-512, 0);
+                    letter.speed = random(0, 3);                
+                    letter.image = random(0, 23);
+                }
+
+                break;
+
+        }
+
+        PD::drawBitmap(letter.x, letter.y, Images::Letters[letter.image]);
+
+    }
 
 }

@@ -73,12 +73,8 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     PD::drawBitmap(xOffset, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[26]);
 
     if (this->gamePlayVars.keyboard.xCursor == 0 && this->gamePlayVars.keyboard.yCursor == 2) {
-<<<<<<< Updated upstream
-        PD::setColor(12, 0);
-=======
 
         PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? 7 : 0, 0);
->>>>>>> Stashed changes
         PD::drawRect(xOffset + 1, yOffset + (2 * (key_Height - 1)) + 2, key_Width - 1, key_Height - 3);
 
     }
@@ -91,11 +87,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     PD::drawBitmap(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 2, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[27]);
 
     if (this->gamePlayVars.keyboard.xCursor == 8 && this->gamePlayVars.keyboard.yCursor == 2) {
-<<<<<<< Updated upstream
-        PD::setColor(12, 0);
-=======
         PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? 7 : 0, 0);
->>>>>>> Stashed changes
         PD::drawRect(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 3, 2 * (key_Height - 1) + 2 + yOffset, key_Width + 4, key_Height - 3);
     }
 

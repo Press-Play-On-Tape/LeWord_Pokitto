@@ -28,19 +28,6 @@ void Game::title() {
 
     }
 
-<<<<<<< Updated upstream
-    if (PC::buttons.pressed(BTN_LEFT) && this->gamePlayVars.language == Language::French) {
-        
-        this->gamePlayVars.language = Language::English; 
-        this->cookie->setMode(this->gamePlayVars.language);
-
-    }
-
-    if (PC::buttons.pressed(BTN_RIGHT) && this->gamePlayVars.language == Language::English) {
-        
-        this->gamePlayVars.language = Language::French; 
-        this->cookie->setMode(this->gamePlayVars.language);
-=======
     if (PC::buttons.pressed(BTN_LEFT)) {
         
         if (titleScreenVars.index == TitleScreenMode::Language) {
@@ -78,7 +65,6 @@ void Game::title() {
             }
 
         }
->>>>>>> Stashed changes
 
     }
 
@@ -163,10 +149,6 @@ void Game::title() {
 
     switch (this->cookie->sfx) {
 
-<<<<<<< Updated upstream
-    PD::drawBitmap(0, 47, Images::TitleScreen_Lower);
-    PD::drawBitmap(this->gamePlayVars.language == Language::English ? 7 : 65, 47, Images::Pointer);
-=======
         case SoundSettings::Music:
             PD::drawBitmap(89, 79, titleScreenVars.index == TitleScreenMode::SoundEffects ? Images::Sound_Music_White: Images::Sound_Music_Inactive);
             break;
@@ -184,7 +166,6 @@ void Game::title() {
             break;
 
     }
->>>>>>> Stashed changes
 
     if (titleScreenVars.frameIndex > 0) {
     

@@ -54,14 +54,9 @@ enum GameState : uint8_t {
     Pause_Init,
 };
     
-enum Language : uint8_t {
+enum GameMode : uint8_t {
 	English,
     French,
-};
-   
-enum GameMode : uint8_t {
-	Single,
-    NineHole,
 };
 
 enum AnimationSequence : uint8_t {
@@ -114,16 +109,7 @@ enum class StatisticsMode : uint8_t {
     PageTwo,
 };
 
-<<<<<<< Updated upstream
-enum class TitleScreenSettingsMode : uint8_t {
-    Language,
-    GameMode,
-};
-=======
-
 enum class TitleScreenMode : uint8_t {
     Language,
     SoundEffects,
 };
-
->>>>>>> Stashed changes

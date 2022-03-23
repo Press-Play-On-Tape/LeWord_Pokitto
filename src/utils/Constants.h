@@ -22,6 +22,7 @@ namespace Constants {
     constexpr uint16_t Delay_Low = 400;
     constexpr uint16_t Delay_High = 1500;
     constexpr uint16_t Key_Flash = 32;
+    constexpr uint8_t NumberOfLetters = 20;
 
 };
 

@@ -3,6 +3,40 @@
 #include "Constants.h"
 #include "Enums.h"
 
+struct Letter {
+    
+    int16_t x;
+    int8_t y;
+    int8_t speed;
+    uint8_t size;
+    uint8_t image;
+
+    Direction direction = Direction::Left;
+
+    void init() {
+
+        this->size = random(0, 2);
+        this->y = random(-32, 88);
+        this->x = random(-512, 512);
+        this->speed = random(0, 3);
+        this->image = random(0, 23);
+
+        switch (this->x) {
+
+            case -256 ... 0:
+                direction = Direction::Right;
+                break;
+
+            case 1 ... 256:
+                direction = Direction::Left;
+                break;
+                
+        }
+        
+    }
+
+};
+
 struct Point {
     int16_t x;
     int16_t y;
@@ -20,16 +54,12 @@ struct TitleScreenVars {
     uint8_t delay = 0;
     uint8_t charIndex = 0;
     uint8_t frameIndex = 0;
-<<<<<<< Updated upstream
-    TitleScreenSettingsMode mode = TitleScreenSettingsMode::Language;
-=======
 
     TitleScreenMode index = TitleScreenMode::Language;
->>>>>>> Stashed changes
     
     void reset() {
 
-        // this->cursor = Language::English;
+        // this->cursor = GameMode::English;
 
     }
 
@@ -96,8 +126,7 @@ struct GuessesVar {
 
 struct GamePlayVars {
 
-    Language language = Language::English;
-    GameMode gameMode = GameMode::Single;
+    GameMode mode = GameMode::English;
     KeyboardVars keyboard;
     GuessesVar guesses;
     uint8_t cursor;
@@ -105,26 +134,12 @@ struct GamePlayVars {
     uint8_t showInvalidWord_Count = 0;
     CheckState checkState = CheckState::Normal;
     uint8_t cancelButton = 0;
-    int8_t holes[9];
-    int8_t holesTotal;
 
     #ifdef USE_BRINE
     char selectedWord[5] = { 'B', 'R', 'I', 'N', 'E' };
     #else
     char selectedWord[5] = { ' ', ' ', ' ', ' ', ' ' };
     #endif
-
-    void reset() {
-
-        for (uint8_t i = 0; i < 9; i++) {
-
-            this->holes[i] = 0;
-
-        }
-
-        this->holesTotal = 0;
-
-    }
 
 };
 

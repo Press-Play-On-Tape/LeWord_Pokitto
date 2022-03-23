@@ -142,6 +142,31 @@ namespace Images {
     #include "title/Sound_SFX_Inactive.h"
     #include "title/Sound_SFX_White.h"
 
+    #include "background/Large_A_Blue.h"
+    #include "background/Large_A_Red.h"
+    #include "background/Large_B_Blue.h"
+    #include "background/Large_B_Red.h"
+    #include "background/Large_C_Blue.h"
+    #include "background/Large_C_Red.h"
+    #include "background/Large_D_Blue.h"
+    #include "background/Large_D_Red.h"
+    #include "background/Medium_A_Blue.h"
+    #include "background/Medium_A_Red.h"
+    #include "background/Medium_B_Blue.h"
+    #include "background/Medium_B_Red.h"
+    #include "background/Medium_C_Blue.h"
+    #include "background/Medium_C_Red.h"
+    #include "background/Medium_D_Blue.h"
+    #include "background/Medium_D_Red.h"
+    #include "background/Small_A_Blue.h"
+    #include "background/Small_A_Red.h"
+    #include "background/Small_B_Blue.h"
+    #include "background/Small_B_Red.h"
+    #include "background/Small_C_Blue.h"
+    #include "background/Small_C_Red.h"
+    #include "background/Small_D_Blue.h"
+    #include "background/Small_D_Red.h"
+
     const uint8_t * const Stats[10] = {
         Stats_00,
         Stats_01,
@@ -341,6 +366,33 @@ namespace Images {
         TitleScreen_D_03, 
         TitleScreen_D_02, 
         TitleScreen_D_01, 
+    };
+
+    const uint8_t * const Letters[24] = {
+        Large_A_Blue,
+        Large_A_Red,
+        Large_B_Blue,
+        Large_B_Red,
+        Large_C_Blue,
+        Large_C_Red,
+        Large_D_Blue,
+        Large_D_Red,
+        Medium_A_Blue,
+        Medium_A_Red,
+        Medium_B_Blue,
+        Medium_B_Red,
+        Medium_C_Blue,
+        Medium_C_Red,
+        Medium_D_Blue,
+        Medium_D_Red,
+        Small_A_Blue,
+        Small_A_Red,
+        Small_B_Blue,
+        Small_B_Red,
+        Small_C_Blue,
+        Small_C_Red,
+        Small_D_Blue,
+        Small_D_Red,
     };
 
 };

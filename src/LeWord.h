@@ -11,7 +11,6 @@
 #include "utils/SFXVolumeSource.hpp"
 #include "utils/Utils.h"
 #include "dictionary/Dictionary.h"
-#include "animations/Animations.h"
 
 using PC=Pokitto::Core;
 using PD=Pokitto::Display;
@@ -30,6 +29,7 @@ class Game {
 
         File file;
         Sounds sounds;
+        Letter letters[Constants::NumberOfLetters];
         
     public:
         void setup(GameCookie *cookie);
@@ -50,6 +50,7 @@ class Game {
         void title_Init();
         void title(); 
         void renderScreen(); 
+        void renderBackground(); 
         void moveCursor(Direction direction);
         uint8_t textWidth(uint16_t number);
         CheckState checkWord();
