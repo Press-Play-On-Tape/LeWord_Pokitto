@@ -1,6 +1,7 @@
 #pragma once
 
 #include "splash/Splash.h"
+#include "tapes/Tapes.h"
 
 namespace Images {
 
@@ -71,6 +72,7 @@ namespace Images {
     #include "Quit_EN.h"
     #include "Quit_FR.h"
     #include "Pointer.h"
+    #include "Pointer_Inactive.h"
     #include "Arrow_Up.h"
     #include "Arrow_Down.h"
 
@@ -92,6 +94,7 @@ namespace Images {
     #include "statistics/Stats_09.h"
 
     #include "title/TitleScreen_Lower.h"
+    #include "title/TitleScreen_Lower_Inactive.h"
     #include "title/TitleScreen_L_00.h"
     #include "title/TitleScreen_L_01.h"
     #include "title/TitleScreen_L_02.h"
@@ -130,19 +133,14 @@ namespace Images {
     #include "title/TitleScreen_Y_08.h"
     #include "title/TitleScreen_Y_09.h"
 
-    #include "man/Walking_L_00.h"
-    #include "man/Walking_L_01.h"
-    #include "man/Walking_L_02.h"
-    #include "man/Walking_L_03.h"
-    #include "man/Walking_R_00.h"
-    #include "man/Walking_R_01.h"
-    #include "man/Walking_R_02.h"
-    #include "man/Walking_R_03.h"
-    #include "man/Thinking_R.h"
-    #include "man/Thinking_L.h"
-    #include "man/Word_00.h"
-    #include "man/Word_01.h"
-    #include "man/LightBulb.h"
+    #include "title/Sound_Both_Inactive.h"
+    #include "title/Sound_Both_White.h"
+    #include "title/Sound_Music_Inactive.h"
+    #include "title/Sound_Music_White.h"
+    #include "title/Sound_None_Inactive.h"
+    #include "title/Sound_None_White.h"
+    #include "title/Sound_SFX_Inactive.h"
+    #include "title/Sound_SFX_White.h"
 
     const uint8_t * const Stats[10] = {
         Stats_00,
@@ -343,26 +341,6 @@ namespace Images {
         TitleScreen_D_03, 
         TitleScreen_D_02, 
         TitleScreen_D_01, 
-    };
-
-    const uint8_t * const Man[] = { 
-        Walking_L_00,  // 0
-        Walking_L_01, 
-        Walking_L_02,  // 2
-        Walking_R_00,
-        Walking_R_01,  // 4
-        Walking_R_02, 
-        Walking_R_03,  // 6
-        Thinking_R, 
-        Word_00,    // 8
-        Word_01, 
-        Walking_L_03, // 10
-        Thinking_L, 
-    };
-
-    const uint8_t * const Man_Word[] = { 
-        Word_00,
-        Word_01, 
     };
 
 };

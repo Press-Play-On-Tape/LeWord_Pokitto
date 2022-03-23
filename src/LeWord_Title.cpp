@@ -24,9 +24,11 @@ void Game::title() {
     if (PC::buttons.pressed(BTN_A)) {
         
         this->gameState = GameState::Game_Init; 
+        this->sounds.fadeMode = FadeMode::FadeOut;
 
     }
 
+<<<<<<< Updated upstream
     if (PC::buttons.pressed(BTN_LEFT) && this->gamePlayVars.language == Language::French) {
         
         this->gamePlayVars.language = Language::English; 
@@ -38,6 +40,45 @@ void Game::title() {
         
         this->gamePlayVars.language = Language::French; 
         this->cookie->setMode(this->gamePlayVars.language);
+=======
+    if (PC::buttons.pressed(BTN_LEFT)) {
+        
+        if (titleScreenVars.index == TitleScreenMode::Language) {
+
+            if (this->gamePlayVars.mode == GameMode::French) {
+                
+                this->gamePlayVars.mode = GameMode::English; 
+                this->cookie->setMode(this->gamePlayVars.mode);
+
+            }
+    
+        }
+        else {
+
+            titleScreenVars.index = TitleScreenMode::Language;
+
+        }
+
+    }
+
+    if (PC::buttons.pressed(BTN_RIGHT)) {
+        
+        if (titleScreenVars.index == TitleScreenMode::Language) {
+            
+            if (this->gamePlayVars.mode == GameMode::English) {
+            
+                this->gamePlayVars.mode = GameMode::French; 
+                this->cookie->setMode(this->gamePlayVars.mode);
+
+            }
+            else {
+
+                titleScreenVars.index = TitleScreenMode::SoundEffects;
+
+            }
+
+        }
+>>>>>>> Stashed changes
 
     }
 
@@ -47,6 +88,47 @@ void Game::title() {
         this->gameState = GameState::Stats_Init; 
 
     }
+
+    if (titleScreenVars.index == TitleScreenMode::SoundEffects && (PC::buttons.pressed(BTN_UP) || PC::buttons.pressed(BTN_DOWN))) {
+        
+        if (PC::buttons.pressed(BTN_UP)) {
+
+            this->cookie->sfx--;
+            this->cookie->saveCookie();
+
+            if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
+
+                this->sounds.muteTheme();
+                
+            }
+            else {
+
+                this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
+
+            }
+
+        }
+
+        if (PC::buttons.pressed(BTN_DOWN)) {
+
+            this->cookie->sfx++;
+            this->cookie->saveCookie();
+
+            if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
+
+                this->sounds.muteTheme();
+                
+            }
+            else {
+
+                this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
+                
+            }
+            
+        }
+
+    }
+
 
     uint8_t indexes[6] = { 0, 0, 0, 0, 0, 0, };
 
@@ -68,15 +150,41 @@ void Game::title() {
 
     }
 
-    PD::drawBitmap(5, 11, Images::TitleScreen_L[indexes[0]]);
-    PD::drawBitmap(22, 11, Images::TitleScreen_E[indexes[1]]);
-    PD::drawBitmap(39, 11, Images::TitleScreen_W[indexes[2]]);
-    PD::drawBitmap(56, 11, Images::TitleScreen_O[indexes[3]]);
-    PD::drawBitmap(73, 11, Images::TitleScreen_R[indexes[4]]);
-    PD::drawBitmap(90, 11, Images::TitleScreen_D[indexes[5]]);
+    PD::drawBitmap(5, 26, Images::TitleScreen_L[indexes[0]]);
+    PD::drawBitmap(22, 26, Images::TitleScreen_E[indexes[1]]);
+    PD::drawBitmap(39, 26, Images::TitleScreen_W[indexes[2]]);
+    PD::drawBitmap(56, 26, Images::TitleScreen_O[indexes[3]]);
+    PD::drawBitmap(73, 26, Images::TitleScreen_R[indexes[4]]);
+    PD::drawBitmap(90, 26, Images::TitleScreen_D[indexes[5]]);
 
+    PD::drawBitmap(0, 57, titleScreenVars.index == TitleScreenMode::Language ? Images::TitleScreen_Lower: Images::TitleScreen_Lower_Inactive);
+    PD::drawBitmap(this->gamePlayVars.mode == GameMode::English ? 7 : 65, 57, titleScreenVars.index == TitleScreenMode::Language ? Images::Pointer: Images::Pointer_Inactive);
+
+
+    switch (this->cookie->sfx) {
+
+<<<<<<< Updated upstream
     PD::drawBitmap(0, 47, Images::TitleScreen_Lower);
     PD::drawBitmap(this->gamePlayVars.language == Language::English ? 7 : 65, 47, Images::Pointer);
+=======
+        case SoundSettings::Music:
+            PD::drawBitmap(89, 79, titleScreenVars.index == TitleScreenMode::SoundEffects ? Images::Sound_Music_White: Images::Sound_Music_Inactive);
+            break;
+
+        case SoundSettings::SFX:
+            PD::drawBitmap(89, 79, titleScreenVars.index == TitleScreenMode::SoundEffects ? Images::Sound_SFX_White: Images::Sound_SFX_Inactive);
+            break;
+
+        case SoundSettings::Both:
+            PD::drawBitmap(89, 79, titleScreenVars.index == TitleScreenMode::SoundEffects? Images::Sound_Both_White: Images::Sound_Both_Inactive);
+            break;
+
+        default:
+            PD::drawBitmap(89, 79, titleScreenVars.index == TitleScreenMode::SoundEffects ? Images::Sound_None_White: Images::Sound_None_Inactive);
+            break;
+
+    }
+>>>>>>> Stashed changes
 
     if (titleScreenVars.frameIndex > 0) {
     

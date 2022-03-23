@@ -25,7 +25,11 @@ void Game::game_Init() {
 
     #ifndef USE_BRINE
 
+<<<<<<< Updated upstream
         switch (this->gamePlayVars.language) {
+=======
+        switch (this->gamePlayVars.mode) {
+>>>>>>> Stashed changes
 
             case Language::English:
                 {
@@ -76,7 +80,11 @@ void Game::game_Init() {
 
     #else
 
+<<<<<<< Updated upstream
         switch (this->gamePlayVars.language) {
+=======
+        switch (this->gamePlayVars.mode) {
+>>>>>>> Stashed changes
 
             case Language::English:
                 this->file.openRO("music/LeWord00.img");
@@ -94,57 +102,6 @@ void Game::game_Init() {
 }
 
 void Game::game() {
-
-    uint8_t tmpManX = 0;
-    uint8_t tmpManB = 0;
-    uint8_t tmpManI = 0;
-    uint8_t tmpManP = 0;
-    int8_t tmpManK = 0;
-
-
-    if (man_delay == 0) {
-
-        switch (animation) {
-
-            case AnimationSequence::Think_L:
-
-                tmpManX = Animation::ManData_L[man_Idx * 5];
-                tmpManK = Animation::ManData_L[(man_Idx * 5) + 1];
-                tmpManB = Animation::ManData_L[(man_Idx * 5) + 2];
-                tmpManI = Animation::ManData_L[(man_Idx * 5) + 3];
-                tmpManP = Animation::ManData_L[(man_Idx * 5) + 4];
-                break;
-
-            case AnimationSequence::Think_R: 
-                
-                tmpManX = Animation::ManData_R[man_Idx * 5];
-                tmpManK = -Animation::ManData_R[(man_Idx * 5) + 1];
-                tmpManB = Animation::ManData_R[(man_Idx * 5) + 2];
-                tmpManI = Animation::ManData_R[(man_Idx * 5) + 3];
-                tmpManP = Animation::ManData_R[(man_Idx * 5) + 4];
-                break;
-
-            case AnimationSequence::Walk_LR: 
-
-                tmpManX = man_Idx;
-                tmpManK = 0;
-                tmpManB = 0;
-                tmpManI = ((man_Idx % 6) / 2) + 3;
-                tmpManP = 0;
-                break;
-
-            case AnimationSequence::Walk_RL: 
-
-                tmpManX = 128 + 16 - man_Idx;
-                tmpManK = 0;
-                tmpManB = 0;
-                tmpManI = ((man_Idx % 6) / 2);
-                tmpManP = 0;
-                break;
-
-        }
-
-    }
 
 
     // Press B to quit ..
@@ -165,6 +122,28 @@ void Game::game() {
     }
 
 
+<<<<<<< Updated upstream
+        this->gamePlayVars.cancelButton++;
+
+        if (this->gamePlayVars.cancelButton == 64) {
+            this->gamePlayVars.checkState = CheckState::Quit;
+        }
+
+    }
+    else {
+
+        this->gamePlayVars.cancelButton = false;
+=======
+    // Pause?
+
+    if (PC::buttons.released(BTN_C)) {
+
+        this->gameState = GameState::Pause_Init;
+>>>>>>> Stashed changes
+
+    }
+
+
     switch (this->gamePlayVars.checkState) {
 
         case CheckState::InvalidWord:
@@ -175,7 +154,11 @@ void Game::game() {
 
         case CheckState::CorrectWord:
             if (PC::buttons.pressed(BTN_A) || PC::buttons.pressed(BTN_B)) {
+<<<<<<< Updated upstream
                 this->cookie->increaseCorrectWords(this->gamePlayVars.language, this->gamePlayVars.guesses.yCursor);
+=======
+                this->cookie->increaseCorrectWords(this->gamePlayVars.mode, this->gamePlayVars.guesses.yCursor);
+>>>>>>> Stashed changes
                 this->statisticsScreenVars.numberOfAttempts = this->gamePlayVars.guesses.yCursor + 1;
                 this->gameState = GameState::Stats_Init;
             }
@@ -183,14 +166,22 @@ void Game::game() {
 
         case CheckState::TooManyAttempts:
             if (PC::buttons.pressed(BTN_A) || PC::buttons.pressed(BTN_B)) {
+<<<<<<< Updated upstream
                 this->cookie->resetWiningStreak(this->gamePlayVars.language);
+=======
+                this->cookie->resetWiningStreak(this->gamePlayVars.mode);
+>>>>>>> Stashed changes
                 this->gameState = GameState::Stats_Init;
             }
             break;
 
         case CheckState::Quit:
             if (PC::buttons.pressed(BTN_A) || PC::buttons.pressed(BTN_B)) {
+<<<<<<< Updated upstream
                 if (this->gamePlayVars.guesses.yCursor > 0) this->cookie->resetWiningStreak(this->gamePlayVars.language);
+=======
+                if (this->gamePlayVars.guesses.yCursor > 0) this->cookie->resetWiningStreak(this->gamePlayVars.mode);
+>>>>>>> Stashed changes
                 this->statisticsScreenVars.numberOfAttempts = 7;
                 this->gameState = GameState::Stats_Init;
             }
@@ -247,7 +238,11 @@ void Game::game() {
 
                     default:
 
+<<<<<<< Updated upstream
                         if (this->gamePlayVars.guesses.listY > Constants::scroll_Limits[this->gamePlayVars.guesses.yCursor]) {
+=======
+                        if (this->gamePlayVars.guesses.listY > Constants::Scroll_Limits[this->gamePlayVars.guesses.yCursor]) {
+>>>>>>> Stashed changes
                             this->gamePlayVars.guesses.listY = this->gamePlayVars.guesses.listY - 1;
                         }
                         else{
@@ -344,7 +339,11 @@ void Game::game() {
                                     this->gamePlayVars.guesses.yCursor = this->gamePlayVars.guesses.yCursor + 1;
 
                                     if (this->gamePlayVars.guesses.yCursor >= 4) {
+<<<<<<< Updated upstream
                                         this->gamePlayVars.guesses.listY = -((this->gamePlayVars.guesses.yCursor - 3) * Constants::guess_Spacing);
+=======
+                                        this->gamePlayVars.guesses.listY = -((this->gamePlayVars.guesses.yCursor - 3) * Constants::Guess_Spacing);
+>>>>>>> Stashed changes
                                     }
 
                                 }
@@ -359,11 +358,19 @@ void Game::game() {
                 }
                 else {
                     
+<<<<<<< Updated upstream
                     //if (keyboard[Constants::key_Map[this->gamePlayVars.keyboard.yCursor][this->gamePlayVars.keyboard.xCursor]] != KeyState::Invisible) {
 
                         if (this->gamePlayVars.guesses.xCursor < 5) {
 
                             this->gamePlayVars.guesses.chars[this->gamePlayVars.guesses.yCursor][this->gamePlayVars.guesses.xCursor] = 65 + Constants::key_Map[this->gamePlayVars.keyboard.yCursor][this->gamePlayVars.keyboard.xCursor];
+=======
+                    //if (keyboard[Constants::Key_Map[this->gamePlayVars.keyboard.yCursor][this->gamePlayVars.keyboard.xCursor]] != KeyState::Invisible) {
+
+                        if (this->gamePlayVars.guesses.xCursor < 5) {
+
+                            this->gamePlayVars.guesses.chars[this->gamePlayVars.guesses.yCursor][this->gamePlayVars.guesses.xCursor] = 65 + Constants::Key_Map[this->gamePlayVars.keyboard.yCursor][this->gamePlayVars.keyboard.xCursor];
+>>>>>>> Stashed changes
 
                         }
 
@@ -390,6 +397,7 @@ void Game::game() {
 
     }
 
+<<<<<<< Updated upstream
     drawMan(tmpManX, tmpManB, tmpManI, tmpManP, tmpManK);
     drawGuesses(tmpManK, this->gamePlayVars.guesses.listY);
 
@@ -397,6 +405,27 @@ void Game::game() {
 
         case CheckState::InvalidWord:
             if (this->gamePlayVars.language == Language::English) {
+=======
+    this->renderScreen();
+
+
+
+    // Housekeeping ..
+
+    if (this->gamePlayVars.showInvalidWord_Count > 0 && PC::frameCount % 2 == 0) this->gamePlayVars.showInvalidWord_Count--;
+
+}
+
+
+void Game::renderScreen() {
+
+    drawGuesses(this->gamePlayVars.guesses.listY);
+
+    switch (this->gamePlayVars.checkState) {
+
+        case CheckState::InvalidWord:
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(14, 72, Images::InvalidWord_EN);
             }
             else {
@@ -405,7 +434,11 @@ void Game::game() {
             break;
 
         case CheckState::CorrectWord:
+<<<<<<< Updated upstream
             if (this->gamePlayVars.language == Language::English) {
+=======
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(32, 72, Images::Correct_EN);
             }
             else {
@@ -415,7 +448,11 @@ void Game::game() {
 
         case CheckState::TooManyAttempts:
             drawSolution();
+<<<<<<< Updated upstream
             if (this->gamePlayVars.language == Language::English) {
+=======
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(9, 61, Images::TooManyAttempts_EN);
             }
             else {
@@ -426,7 +463,11 @@ void Game::game() {
         case CheckState::Quit:
             PD::setColor(0);
             PD::fillRect(0, 59, 128, 3);
+<<<<<<< Updated upstream
             if (this->gamePlayVars.language == Language::English) {
+=======
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(20, 61, Images::Quit_EN);
             }
             else {
@@ -436,7 +477,11 @@ void Game::game() {
             break;
 
         default:
+<<<<<<< Updated upstream
             drawKeyboard(10 + tmpManK, this->gamePlayVars.keyboard.yPos);
+=======
+            drawKeyboard(10, this->gamePlayVars.keyboard.yPos);
+>>>>>>> Stashed changes
             break;
 
     }
@@ -470,6 +515,7 @@ void Game::game() {
             break;
     }
 
+<<<<<<< Updated upstream
 
 
     // Housekeeping ..
@@ -536,8 +582,9 @@ void Game::game() {
 
     }
 
+=======
+>>>>>>> Stashed changes
 }
-
 
 void Game::drawSolution() {
 
@@ -548,9 +595,13 @@ void Game::drawSolution() {
     for (uint8_t x = 0; x < 5; x++) {
 
         PD::setColor(3, 7);
-        PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing), 72, Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
+        PD::fillRect(Constants::Guess_Left + (x * Constants::Guess_Spacing), 72, Constants::Guess_Spacing - 2, Constants::Guess_Spacing - 2);
         PD::setColor(7, 3);
+<<<<<<< Updated upstream
         PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 1, 74);
+=======
+        PD::setCursor(Constants::Guess_Left + (x * Constants::Guess_Spacing) + 1, 74);
+>>>>>>> Stashed changes
         PD::print(this->gamePlayVars.selectedWord[x]);
 
     }
@@ -560,7 +611,7 @@ void Game::drawSolution() {
 }
 
 
-void Game::drawGuesses(int8_t xOffset, int8_t yOffset) {
+void Game::drawGuesses(int8_t yOffset) {
 
     for (uint8_t y = 0; y < this->gamePlayVars.guesses.yCursor + 1; y++) {
 
@@ -608,34 +659,50 @@ void Game::drawGuesses(int8_t xOffset, int8_t yOffset) {
 
                 case GuessState::Correct:
                     PD::setColor(3, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
+                    PD::fillRect(Constants::Guess_Left + (x * Constants::Guess_Spacing) + xMove, y * Constants::Guess_Spacing + yOffset + yMove[x], Constants::Guess_Spacing - 2, Constants::Guess_Spacing - 2);
                     PD::setColor(7, 3);
+<<<<<<< Updated upstream
                     PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
+=======
+                    PD::setCursor(Constants::Guess_Left + (x * Constants::Guess_Spacing) + 3 + xMove - 2, y * Constants::Guess_Spacing + 2 + yOffset + yMove[x]);
+>>>>>>> Stashed changes
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 
                 case GuessState::WrongPosition:
                     PD::setColor(9, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
+                    PD::fillRect(Constants::Guess_Left + (x * Constants::Guess_Spacing) + xMove, y * Constants::Guess_Spacing + yOffset + yMove[x], Constants::Guess_Spacing - 2, Constants::Guess_Spacing - 2);
                     PD::setColor(7, 9);
+<<<<<<< Updated upstream
                     PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
+=======
+                    PD::setCursor(Constants::Guess_Left + (x * Constants::Guess_Spacing) + 3 + xMove - 2, y * Constants::Guess_Spacing + 2 + yOffset + yMove[x]);
+>>>>>>> Stashed changes
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 
                 case GuessState::Dashed:
                     PD::setColor(7, 0);
+<<<<<<< Updated upstream
                     PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
+=======
+                    PD::setCursor(Constants::Guess_Left + (x * Constants::Guess_Spacing) + 3 + xMove - 2, y * Constants::Guess_Spacing + 2 + yOffset + yMove[x]);
+>>>>>>> Stashed changes
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     PD::setColor(5, 0);
-                    PD::drawFastHLine(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, ((y + 1) * Constants::guess_Spacing) - 2 + yOffset + yMove[x], Constants::guess_Spacing - 2);
+                    PD::drawFastHLine(Constants::Guess_Left + (x * Constants::Guess_Spacing) + xMove, ((y + 1) * Constants::Guess_Spacing) - 2 + yOffset + yMove[x], Constants::Guess_Spacing - 2);
                     break;
 
 
                 default:
                     PD::setColor(5, 7);
-                    PD::fillRect(Constants::guess_Left + (x * Constants::guess_Spacing) + xMove + xOffset, y * Constants::guess_Spacing + yOffset + yMove[x], Constants::guess_Spacing - 2, Constants::guess_Spacing - 2);
+                    PD::fillRect(Constants::Guess_Left + (x * Constants::Guess_Spacing) + xMove, y * Constants::Guess_Spacing + yOffset + yMove[x], Constants::Guess_Spacing - 2, Constants::Guess_Spacing - 2);
                     PD::setColor(7, 5);
+<<<<<<< Updated upstream
                     PD::setCursor(Constants::guess_Left + (x * Constants::guess_Spacing) + 3 + xMove + xOffset - 2, y * Constants::guess_Spacing + 2 + yOffset + yMove[x]);
+=======
+                    PD::setCursor(Constants::Guess_Left + (x * Constants::Guess_Spacing) + 3 + xMove - 2, y * Constants::Guess_Spacing + 2 + yOffset + yMove[x]);
+>>>>>>> Stashed changes
                     PD::print(this->gamePlayVars.guesses.chars[y][x]);
                     break;
 
@@ -644,61 +711,6 @@ void Game::drawGuesses(int8_t xOffset, int8_t yOffset) {
         }
 
         PD::setColor(7, 0);
-
-    }
-
-}
-
-
-void Game::drawMan(uint8_t tmpManX, uint8_t tmpManB, uint8_t tmpManI, uint8_t tmpManP, int8_t tmpManK) {
-
-
-    // Draw man?
-
-    if (man_delay == 0) {
-
-        switch (animation) {
-
-            case AnimationSequence::Think_L:
-
-                if (tmpManP > 0) {
-                    PD::drawBitmap(2, 28, Images::Man_Word[tmpManP - 1]);
-                }
-
-                switch (tmpManB) {
-
-                    case 1:
-                        PD::drawBitmap(tmpManX - 16, 36, Images::LightBulb);
-                        break;
-
-                }
-
-                PD::drawBitmap(tmpManX - 16, 45, Images::Man[tmpManI]); 
-                break;
-
-            case AnimationSequence::Think_R:
-                
-                if (tmpManP > 0) {
-                    PD::drawBitmap(106, 28, Images::Man_Word[tmpManP - 1]);
-                }
-
-                switch (tmpManB) {
-
-                    case 1:
-                        PD::drawBitmap(136 - tmpManX, 36, Images::LightBulb);
-                        break;
-
-                }
-
-                PD::drawBitmap(136 - tmpManX, 45, Images::Man[tmpManI]);
-                break;
-        
-            case AnimationSequence::Walk_LR:
-            case AnimationSequence::Walk_RL:
-                PD::drawBitmap(tmpManX - 16, 45, Images::Man[tmpManI]); 
-                break;
-
-        }
 
     }
 

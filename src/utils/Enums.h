@@ -49,7 +49,9 @@ enum GameState : uint8_t {
 	Game_Init,
 	Game_Play,
     Stats_Init,
-    Stats
+    Stats,
+    Pause,
+    Pause_Init,
 };
     
 enum Language : uint8_t {
@@ -112,7 +114,16 @@ enum class StatisticsMode : uint8_t {
     PageTwo,
 };
 
+<<<<<<< Updated upstream
 enum class TitleScreenSettingsMode : uint8_t {
     Language,
     GameMode,
 };
+=======
+
+enum class TitleScreenMode : uint8_t {
+    Language,
+    SoundEffects,
+};
+
+>>>>>>> Stashed changes

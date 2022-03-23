@@ -1,0 +1,12 @@
+// Automatically generated file, do not edit.
+
+#pragma once
+
+inline constexpr uint8_t Pointer_Inactive[] = {
+4, 5,
+0x50,0x00,
+0x55,0x00,
+0x55,0x50,
+0x55,0x00,
+0x50,0x00
+};

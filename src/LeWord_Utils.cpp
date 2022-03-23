@@ -186,7 +186,11 @@ CheckState Game::checkWord() {
     uint16_t startPos = ((guessWord[0] - 65) * 26) + (guessWord[1] - 65);
     char status = ' ';
 
+<<<<<<< Updated upstream
     switch (this->gamePlayVars.language) {
+=======
+    switch (this->gamePlayVars.mode) {
+>>>>>>> Stashed changes
 
         case Language::English:
             alphaStart = Dictionary::English_AlphaMap[startPos] * 6;

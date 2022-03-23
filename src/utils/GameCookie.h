@@ -11,8 +11,13 @@ class GameCookie : public Pokitto::Cookie {
 	public:
 
 		uint8_t initialised;
+<<<<<<< Updated upstream
 		Language Language;
+=======
+		uint8_t track;
+>>>>>>> Stashed changes
 		GameMode gameMode;
+		SoundSettings sfx;
 
 		uint16_t gamesWon_EN = 0;
 		uint16_t gamesPlayed_EN = 0;
@@ -31,9 +36,13 @@ class GameCookie : public Pokitto::Cookie {
 		void initialise() {
 
 			this->initialised = COOKIE_INITIALISED;
+<<<<<<< Updated upstream
 
 			this->language = Language::English;
 			this->gameMode = GameMode::Single;
+=======
+			this->sfx = SoundSettings::Both;
+>>>>>>> Stashed changes
 
 			this->gamesWon_EN = 0;
 			this->gamesPlayed_EN = 0;

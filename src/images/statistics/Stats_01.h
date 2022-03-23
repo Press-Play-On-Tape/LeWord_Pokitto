@@ -2,7 +2,7 @@
 
 #pragma once
 
-const uint8_t Stats_01[] = {
+inline constexpr uint8_t Stats_01[] = {
 4, 7,
 0xee,0xee,
 0xee,0x7e,

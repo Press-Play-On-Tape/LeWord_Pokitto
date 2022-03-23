@@ -26,7 +26,11 @@ void Game::statistics() {
     uint16_t maxStreak = 0;
     uint16_t percent = 0;
 
+<<<<<<< Updated upstream
     if (this->gamePlayVars.language == Language::English) {
+=======
+    if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
 
         gamesWon = this->cookie->gamesWon_EN;
         gamesPlayed = this->cookie->gamesPlayed_EN;
@@ -70,7 +74,11 @@ void Game::statistics() {
         this->gamePlayVars.cancelButton++;
 
         if (this->gamePlayVars.cancelButton == 64) {
+<<<<<<< Updated upstream
             this->cookie->initialise(this->gamePlayVars.language);
+=======
+            this->cookie->initialise(this->gamePlayVars.mode);
+>>>>>>> Stashed changes
         }
 
     }
@@ -85,32 +93,36 @@ void Game::statistics() {
 
         case StatisticsMode::PageOne:
 
+<<<<<<< Updated upstream
             if (this->gamePlayVars.language == Language::English) {
+=======
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
-                PD::drawBitmap(0, 8, Images::Statistics_EN);
+                PD::drawBitmap(0, 13, Images::Statistics_EN);
             }
             else {
                 PD::drawBitmap(0, 0, Images::Statistics_Header_FR);
-                PD::drawBitmap(0, 8, Images::Statistics_FR);
+                PD::drawBitmap(0, 13, Images::Statistics_FR);
             }
 
-            PD::setColor(12);
-            PD::setCursor(18, 14);
+            PD::setColor(7);
+            PD::setCursor(16, 19);
             if (gamesPlayed < 100) { PD::print("0"); }
             if (gamesPlayed < 10)  { PD::print("0"); }
             PD::print(gamesPlayed);
 
-            PD::setCursor(71, 14);
+            PD::setCursor(71, 19);
             if (percent < 100) { PD::print("0"); }
             if (percent < 10)  { PD::print("0"); }
             PD::print(percent);
 
-            PD::setCursor(18, 39);
+            PD::setCursor(16, 44);
             if (currentStreak < 100) { PD::print("0"); }
             if (currentStreak < 10)  { PD::print("0"); }
             PD::print(currentStreak);
 
-            PD::setCursor(71, 39);
+            PD::setCursor(71, 44);
             if (maxStreak < 100) { PD::print("0"); }
             if (maxStreak < 10)  {PD::print("0"); }
             PD::print(maxStreak);
@@ -119,7 +131,11 @@ void Game::statistics() {
 
         case StatisticsMode::PageTwo:
 
+<<<<<<< Updated upstream
             if (this->gamePlayVars.language == Language::English) {
+=======
+            if (this->gamePlayVars.mode == GameMode::English) {
+>>>>>>> Stashed changes
                 PD::drawBitmap(0, 0, Images::Statistics_Header_EN);
             }
             else {
@@ -130,8 +146,13 @@ void Game::statistics() {
 
             for (uint8_t i = 0; i < 6; i++) {
 
+<<<<<<< Updated upstream
                 uint8_t width = this->cookie->getPercent(this->gamePlayVars.language, i);
                 uint16_t val = this->cookie->getPercentVal(this->gamePlayVars.language, i);
+=======
+                uint8_t width = this->cookie->getPercent(this->gamePlayVars.mode, i);
+                uint16_t val = this->cookie->getPercentVal(this->gamePlayVars.mode, i);
+>>>>>>> Stashed changes
                 uint8_t textWidth = this->textWidth(val);
 
                 if (val != 0 && textWidth > width) width = textWidth + 1;

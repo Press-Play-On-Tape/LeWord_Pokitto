@@ -2,7 +2,7 @@
 
 #pragma once
 
-const uint8_t Arrow_Up[] = {
+inline constexpr uint8_t Arrow_Up[] = {
 5, 3,
 0x00,0x70,0x00,
 0x07,0x77,0x00,

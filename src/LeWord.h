@@ -7,7 +7,7 @@
 #include "utils/Enums.h"
 #include "utils/GameCookie.h"
 #include "utils/Structs.h"
-//#include "src/sounds/Sounds.h"
+#include "src/sounds/Sounds.h"
 #include "utils/SFXVolumeSource.hpp"
 #include "utils/Utils.h"
 #include "dictionary/Dictionary.h"
@@ -28,11 +28,9 @@ class Game {
         GameState gameState = GameState::SplashScreen_Init;
         GameCookie *cookie;
 
-        uint16_t man_delay = random(Constants::Delay_Low, Constants::Delay_High);
-        uint8_t man_Idx = 0;
-        AnimationSequence animation = AnimationSequence::Walk_RL;
         File file;
-
+        Sounds sounds;
+        
     public:
         void setup(GameCookie *cookie);
         void loop();
@@ -42,14 +40,16 @@ class Game {
         void splashScreen();
         void game_Init();
         void game();
+        void pause_Init();
+        void pause();
         void drawSolution();
-        void drawGuesses(int8_t xOffset, int8_t yOffset);
-        void drawMan(uint8_t tmpManX, uint8_t tmpManB, uint8_t tmpManI, uint8_t tmpManP, int8_t tmpManK);
+        void drawGuesses(int8_t yOffset);
         void drawKeyboard(uint8_t xOffset, uint8_t yOffset);
         void statistics_Init();
         void statistics(); 
         void title_Init();
         void title(); 
+        void renderScreen(); 
         void moveCursor(Direction direction);
         uint8_t textWidth(uint16_t number);
         CheckState checkWord();

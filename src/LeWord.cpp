@@ -36,7 +36,7 @@ void Game::loop() {
 
         case GameState::Title_Init:
 
-            // sounds.playTheme(2, this->cookie->sfx, true, true);
+            sounds.playTheme(this->cookie->track, this->cookie->sfx, true, true);
             title_Init();
             this-> gameState = GameState::Title;
             [[fallthrough]]
@@ -57,6 +57,17 @@ void Game::loop() {
             game();
             break;
 
+        case GameState::Pause_Init:
+
+            pause_Init();
+            this-> gameState = GameState::Pause;
+            [[fallthrough]]
+
+        case GameState::Pause:
+
+            pause();
+            break;
+
         case GameState::Stats_Init:
 
             statistics_Init();
@@ -68,5 +79,7 @@ void Game::loop() {
             break;
 
     }
+
+    sounds.updateFades();
 
 }

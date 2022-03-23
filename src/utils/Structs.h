@@ -20,7 +20,12 @@ struct TitleScreenVars {
     uint8_t delay = 0;
     uint8_t charIndex = 0;
     uint8_t frameIndex = 0;
+<<<<<<< Updated upstream
     TitleScreenSettingsMode mode = TitleScreenSettingsMode::Language;
+=======
+
+    TitleScreenMode index = TitleScreenMode::Language;
+>>>>>>> Stashed changes
     
     void reset() {
 
@@ -95,6 +100,7 @@ struct GamePlayVars {
     GameMode gameMode = GameMode::Single;
     KeyboardVars keyboard;
     GuessesVar guesses;
+    uint8_t cursor;
 
     uint8_t showInvalidWord_Count = 0;
     CheckState checkState = CheckState::Normal;

@@ -2,7 +2,7 @@
 
 #pragma once
 
-const uint8_t Ppot_Arrow[] = {
+inline constexpr uint8_t Ppot_Arrow[] = {
 5, 7,
 0x99,0x00,0x00,
 0x99,0x90,0x00,

@@ -298,131 +298,119 @@
 		"windows": "Desktop"
 	},
 	"meta": {
-		"LeWord_Pokitto.eeprom": {},
-		"LeWord_Pokitto.elf": {},
 		"LeWord_Pokitto.bin": {},
+		"LeWord_Pokitto.eeprom": {},
+		"LeWord_Pokitto.bin.1.png": {},
+		"LeWord_Pokitto.bin.1.h": {},
 		"My_settings.h": {},
-		"project.json": {},
+		"music": {
+			"sdcard": true
+		},
 		"main.cpp": {},
-		"music": {},
+		"LeWord_Pokitto.elf": {},
+		"project.json": {},
 		"src": {},
-		"music/LeWord00.img": {},
-		"music/LeWord01.img": {},
+		"music/LeWord00.img": {
+			"sdcard": true
+		},
+		"music/LeWord02.raw": {},
+		"music/LeWord03.raw": {},
+		"music/LeWord04.raw": {},
+		"music/LeWord01.img": {
+			"sdcard": true
+		},
 		"src/LeWord.cpp": {},
 		"src/LeWord.h": {},
-		"src/LeWord_Keyboard.cpp": {},
 		"src/LeWord_Game.cpp": {},
+		"src/LeWord_Keyboard.cpp": {},
+		"src/LeWord_Pause.cpp": {},
 		"src/LeWord_SplashScreen.cpp": {},
 		"src/LeWord_Statistics.cpp": {},
-		"src/LeWord_Utils.cpp": {},
 		"src/LeWord_Title.cpp": {},
 		"src/animations": {},
+		"src/LeWord_Utils.cpp": {},
 		"src/dictionary": {},
 		"src/images": {},
+		"src/sounds": {},
 		"src/utils": {},
 		"src/animations/Animations.h": {},
 		"src/dictionary/Dictionary.h": {},
 		"src/images/Arrow_Down.h": {},
-		"src/images/Arrow_Down.png": {},
 		"src/images/Arrow_Up.h": {},
+		"src/images/Arrow_Down.png": {},
 		"src/images/Arrow_Up.png": {},
 		"src/images/Correct_EN.h": {},
 		"src/images/Correct_EN.png": {},
 		"src/images/Correct_FR.h": {},
 		"src/images/Correct_FR.png": {},
-		"src/images/InvalidWord_EN.h": {},
 		"src/images/Images.h": {},
+		"src/images/InvalidWord_EN.h": {},
 		"src/images/InvalidWord_EN.png": {},
 		"src/images/InvalidWord_FR.h": {},
+		"src/images/InvalidWord_FR.png": {},
 		"src/images/Pointer.h": {},
 		"src/images/Pointer.png": {},
-		"src/images/Quit_EN.png": {},
+		"src/images/Pointer_Inactive.h": {},
+		"src/images/Pointer_Inactive.png": {},
 		"src/images/Quit_EN.h": {},
-		"src/images/InvalidWord_FR.png": {},
-		"src/images/TooManyAttempts_EN.h": {},
-		"src/images/Quit_FR.png": {},
-		"src/images/TooManyAttempts_EN.png": {},
+		"src/images/Quit_EN.png": {},
 		"src/images/Quit_FR.h": {},
+		"src/images/Quit_FR.png": {},
+		"src/images/TooManyAttempts_EN.h": {},
+		"src/images/TooManyAttempts_EN.png": {},
 		"src/images/TooManyAttempts_FR.h": {},
 		"src/images/TooManyAttempts_FR.png": {},
 		"src/images/black": {},
 		"src/images/splash": {},
 		"src/images/statistics": {},
 		"src/images/title": {},
+		"src/images/tapes": {},
 		"src/images/white": {},
-		"src/images/man": {},
+		"src/sounds/ADayToRemember.h": {},
+		"src/sounds/ADayToRemember.raw": {},
+		"src/sounds/BeyondTheLine.h": {},
+		"src/sounds/BeyondTheLine.raw": {},
+		"src/sounds/MoonWalk.raw": {},
+		"src/sounds/MoonWalk.h": {},
+		"src/sounds/PhotoAlbum.h": {},
+		"src/sounds/PhotoAlbum.raw": {},
+		"src/sounds/Townsong.h": {},
+		"src/sounds/Townsong.raw": {},
+		"src/sounds/Sounds.h": {},
+		"src/sounds/UnforgettableJourney.h": {},
+		"src/sounds/UnforgettableJourney.raw": {},
+		"src/sounds/WIldWestVikings.h": {},
+		"src/sounds/WIldWestVikings.raw": {},
+		"src/sounds/rawtobin.js": {},
 		"src/utils/Constants.h": {},
-		"src/utils/Enums.h": {},
 		"src/utils/GameCookie.h": {},
+		"src/utils/Enums.h": {},
 		"src/utils/SFXVolumeSource.hpp": {},
 		"src/utils/Structs.h": {},
 		"src/utils/Utils.h": {},
-		"src/images/splash/Ppot_01.h": {},
-		"src/images/splash/Ppot_00.h": {},
-		"src/images/splash/Ppot_00.png": {},
-		"src/images/splash/Ppot_02.h": {},
-		"src/images/splash/Ppot_02.png": {},
-		"src/images/splash/Ppot_01.png": {},
-		"src/images/splash/Ppot_03.h": {},
-		"src/images/splash/Ppot_03.png": {},
-		"src/images/splash/Ppot_Arrow.png": {},
-		"src/images/splash/Ppot_Arrow.h": {},
-		"src/images/splash/Ppot_Full.h": {},
-		"src/images/splash/Ppot_Full.png": {},
-		"src/images/splash/Splash.h": {},
-		"src/images/statistics/Statistics_EN.h": {},
-		"src/images/statistics/Statistics_EN.png": {},
-		"src/images/statistics/Statistics_FR.h": {},
-		"src/images/statistics/Statistics_Header_EN.png": {},
-		"src/images/statistics/Statistics_FR.png": {},
-		"src/images/statistics/Statistics_Header_FR.h": {},
-		"src/images/statistics/Statistics_Header_FR.png": {},
-		"src/images/statistics/Statistics_Vert.h": {},
-		"src/images/statistics/Stats_00.h": {},
-		"src/images/statistics/Stats_00.png": {},
-		"src/images/statistics/Statistics_Vert.png": {},
-		"src/images/statistics/Statistics_Header_EN.h": {},
-		"src/images/statistics/Stats_01.h": {},
-		"src/images/statistics/Stats_01.png": {},
-		"src/images/statistics/Stats_02.h": {},
-		"src/images/statistics/Stats_02.png": {},
-		"src/images/statistics/Stats_03.h": {},
-		"src/images/statistics/Stats_03.png": {},
-		"src/images/statistics/Stats_04.h": {},
-		"src/images/statistics/Stats_05.h": {},
-		"src/images/statistics/Stats_04.png": {},
-		"src/images/statistics/Stats_05.png": {},
-		"src/images/statistics/Stats_06.h": {},
-		"src/images/statistics/Stats_06.png": {},
-		"src/images/statistics/Stats_07.h": {},
-		"src/images/statistics/Stats_08.h": {},
-		"src/images/statistics/Stats_08.png": {},
-		"src/images/statistics/Stats_09.h": {},
-		"src/images/statistics/Stats_07.png": {},
-		"src/images/statistics/Stats_09.png": {},
 		"src/images/black/Keyboard_B_01.h": {},
+		"src/images/black/Keyboard_B_01.png": {},
 		"src/images/black/Keyboard_B_02.h": {},
 		"src/images/black/Keyboard_B_02.png": {},
-		"src/images/black/Keyboard_B_01.png": {},
 		"src/images/black/Keyboard_B_03.h": {},
 		"src/images/black/Keyboard_B_03.png": {},
 		"src/images/black/Keyboard_B_04.h": {},
-		"src/images/black/Keyboard_B_05.h": {},
 		"src/images/black/Keyboard_B_04.png": {},
+		"src/images/black/Keyboard_B_05.h": {},
 		"src/images/black/Keyboard_B_05.png": {},
+		"src/images/black/Keyboard_B_06.h": {},
 		"src/images/black/Keyboard_B_06.png": {},
 		"src/images/black/Keyboard_B_07.h": {},
-		"src/images/black/Keyboard_B_06.h": {},
-		"src/images/black/Keyboard_B_08.h": {},
 		"src/images/black/Keyboard_B_07.png": {},
+		"src/images/black/Keyboard_B_08.h": {},
 		"src/images/black/Keyboard_B_08.png": {},
 		"src/images/black/Keyboard_B_09.h": {},
 		"src/images/black/Keyboard_B_09.png": {},
 		"src/images/black/Keyboard_B_10.h": {},
 		"src/images/black/Keyboard_B_10.png": {},
 		"src/images/black/Keyboard_B_11.h": {},
-		"src/images/black/Keyboard_B_12.h": {},
 		"src/images/black/Keyboard_B_11.png": {},
+		"src/images/black/Keyboard_B_12.h": {},
 		"src/images/black/Keyboard_B_12.png": {},
 		"src/images/black/Keyboard_B_13.h": {},
 		"src/images/black/Keyboard_B_13.png": {},
@@ -430,17 +418,17 @@
 		"src/images/black/Keyboard_B_14.png": {},
 		"src/images/black/Keyboard_B_15.h": {},
 		"src/images/black/Keyboard_B_15.png": {},
-		"src/images/black/Keyboard_B_16.h": {},
 		"src/images/black/Keyboard_B_16.png": {},
+		"src/images/black/Keyboard_B_16.h": {},
 		"src/images/black/Keyboard_B_17.h": {},
 		"src/images/black/Keyboard_B_17.png": {},
-		"src/images/black/Keyboard_B_18.png": {},
 		"src/images/black/Keyboard_B_18.h": {},
+		"src/images/black/Keyboard_B_18.png": {},
 		"src/images/black/Keyboard_B_19.h": {},
 		"src/images/black/Keyboard_B_19.png": {},
 		"src/images/black/Keyboard_B_20.h": {},
-		"src/images/black/Keyboard_B_21.h": {},
 		"src/images/black/Keyboard_B_20.png": {},
+		"src/images/black/Keyboard_B_21.h": {},
 		"src/images/black/Keyboard_B_21.png": {},
 		"src/images/black/Keyboard_B_22.h": {},
 		"src/images/black/Keyboard_B_22.png": {},
@@ -456,23 +444,114 @@
 		"src/images/black/Keyboard_B_27.png": {},
 		"src/images/black/Keyboard_B_28.h": {},
 		"src/images/black/Keyboard_B_28.png": {},
+		"src/images/splash/Ppot_00.h": {},
+		"src/images/splash/Ppot_00.png": {},
+		"src/images/splash/Ppot_01.h": {},
+		"src/images/splash/Ppot_01.png": {},
+		"src/images/splash/Ppot_02.h": {},
+		"src/images/splash/Ppot_02.png": {},
+		"src/images/splash/Ppot_03.png": {},
+		"src/images/splash/Ppot_03.h": {},
+		"src/images/splash/Ppot_Arrow.h": {},
+		"src/images/splash/Ppot_Arrow.png": {},
+		"src/images/splash/Ppot_Full.h": {},
+		"src/images/splash/Ppot_Full.png": {},
+		"src/images/splash/Splash.h": {},
+		"src/images/statistics/Statistics_EN.h": {},
+		"src/images/statistics/Statistics_EN.png": {},
+		"src/images/statistics/Statistics_FR.h": {},
+		"src/images/statistics/Statistics_FR.png": {},
+		"src/images/statistics/Statistics_Header_EN.h": {},
+		"src/images/statistics/Statistics_Header_FR.h": {},
+		"src/images/statistics/Statistics_Header_EN.png": {},
+		"src/images/statistics/Statistics_Header_FR.png": {},
+		"src/images/statistics/Statistics_Vert.h": {},
+		"src/images/statistics/Statistics_Vert.png": {},
+		"src/images/statistics/Stats_00.h": {},
+		"src/images/statistics/Stats_00.png": {},
+		"src/images/statistics/Stats_01.png": {},
+		"src/images/statistics/Stats_01.h": {},
+		"src/images/statistics/Stats_02.h": {},
+		"src/images/statistics/Stats_02.png": {},
+		"src/images/statistics/Stats_03.h": {},
+		"src/images/statistics/Stats_03.png": {},
+		"src/images/statistics/Stats_04.h": {},
+		"src/images/statistics/Stats_04.png": {},
+		"src/images/statistics/Stats_05.h": {},
+		"src/images/statistics/Stats_05.png": {},
+		"src/images/statistics/Stats_06.h": {},
+		"src/images/statistics/Stats_06.png": {},
+		"src/images/statistics/Stats_07.h": {},
+		"src/images/statistics/Stats_07.png": {},
+		"src/images/statistics/Stats_08.h": {},
+		"src/images/statistics/Stats_08.png": {},
+		"src/images/statistics/Stats_09.h": {},
+		"src/images/statistics/Stats_09.png": {},
+		"src/images/tapes/Archive.zip": {},
+		"src/images/tapes/ArrowLeft.png": {},
+		"src/images/tapes/ArrowLeft.h": {},
+		"src/images/tapes/ArrowRight.h": {},
+		"src/images/tapes/ArrowRight.png": {},
+		"src/images/tapes/BlueTape_00.h": {},
+		"src/images/tapes/BlueTape_00.png": {},
+		"src/images/tapes/BlueTape_01.h": {},
+		"src/images/tapes/BlueTape_01.png": {},
+		"src/images/tapes/BlueTape_02.h": {},
+		"src/images/tapes/BlueTape_02.png": {},
+		"src/images/tapes/BlueTape_Shadow.h": {},
+		"src/images/tapes/GreenTape_00.h": {},
+		"src/images/tapes/GreenTape_00.png": {},
+		"src/images/tapes/BlueTape_Shadow.png": {},
+		"src/images/tapes/GreenTape_01.h": {},
+		"src/images/tapes/GreenTape_01.png": {},
+		"src/images/tapes/GreenTape_02.h": {},
+		"src/images/tapes/GreenTape_Shadow.png": {},
+		"src/images/tapes/GreenTape_02.png": {},
+		"src/images/tapes/Pause.png": {},
+		"src/images/tapes/Pause.h": {},
+		"src/images/tapes/GreenTape_Shadow.h": {},
+		"src/images/tapes/RedTape_00.h": {},
+		"src/images/tapes/RedTape_00.png": {},
+		"src/images/tapes/RedTape_01.h": {},
+		"src/images/tapes/RedTape_01.png": {},
+		"src/images/tapes/RedTape_02.h": {},
+		"src/images/tapes/RedTape_02.png": {},
+		"src/images/tapes/RedTape_Shadow.h": {},
+		"src/images/tapes/RedTape_Shadow.png": {},
+		"src/images/tapes/Tapes.h": {},
+		"src/images/title/Sound_Both_Inactive.h": {},
+		"src/images/title/Sound_Both_Inactive.png": {},
+		"src/images/title/Sound_Both_White.h": {},
+		"src/images/title/Sound_Both_White.png": {},
+		"src/images/title/Sound_Music_Inactive.h": {},
+		"src/images/title/Sound_Music_White.h": {},
+		"src/images/title/Sound_Music_Inactive.png": {},
+		"src/images/title/Sound_Music_White.png": {},
+		"src/images/title/Sound_None_Inactive.h": {},
+		"src/images/title/Sound_None_Inactive.png": {},
+		"src/images/title/Sound_None_White.h": {},
+		"src/images/title/Sound_SFX_Inactive.h": {},
+		"src/images/title/Sound_None_White.png": {},
+		"src/images/title/Sound_SFX_Inactive.png": {},
+		"src/images/title/Sound_SFX_White.h": {},
+		"src/images/title/Sound_SFX_White.png": {},
 		"src/images/title/TitleScreen.h": {},
 		"src/images/title/TitleScreen.png": {},
-		"src/images/title/TitleScreen_D_00.png": {},
 		"src/images/title/TitleScreen_D_00.h": {},
 		"src/images/title/TitleScreen_D_01.h": {},
-		"src/images/title/TitleScreen_D_01.png": {},
-		"src/images/title/TitleScreen_D_02.h": {},
+		"src/images/title/TitleScreen_D_00.png": {},
 		"src/images/title/TitleScreen_D_02.png": {},
+		"src/images/title/TitleScreen_D_02.h": {},
+		"src/images/title/TitleScreen_D_01.png": {},
 		"src/images/title/TitleScreen_D_03.h": {},
 		"src/images/title/TitleScreen_D_03.png": {},
 		"src/images/title/TitleScreen_E_00.h": {},
-		"src/images/title/TitleScreen_E_00.png": {},
 		"src/images/title/TitleScreen_E_01.h": {},
+		"src/images/title/TitleScreen_E_00.png": {},
 		"src/images/title/TitleScreen_E_01.png": {},
 		"src/images/title/TitleScreen_E_02.h": {},
-		"src/images/title/TitleScreen_E_02.png": {},
 		"src/images/title/TitleScreen_E_03.h": {},
+		"src/images/title/TitleScreen_E_02.png": {},
 		"src/images/title/TitleScreen_E_03.png": {},
 		"src/images/title/TitleScreen_L_00.h": {},
 		"src/images/title/TitleScreen_L_00.png": {},
@@ -480,23 +559,25 @@
 		"src/images/title/TitleScreen_L_01.png": {},
 		"src/images/title/TitleScreen_L_02.h": {},
 		"src/images/title/TitleScreen_L_02.png": {},
-		"src/images/title/TitleScreen_L_03.h": {},
 		"src/images/title/TitleScreen_L_03.png": {},
+		"src/images/title/TitleScreen_L_03.h": {},
 		"src/images/title/TitleScreen_Lower.h": {},
 		"src/images/title/TitleScreen_Lower.png": {},
-		"src/images/title/TitleScreen_O_00.h": {},
-		"src/images/title/TitleScreen_O_00.png": {},
+		"src/images/title/TitleScreen_Lower_Inactive.png": {},
+		"src/images/title/TitleScreen_Lower_Inactive.h": {},
 		"src/images/title/TitleScreen_O_01.h": {},
+		"src/images/title/TitleScreen_O_00.png": {},
 		"src/images/title/TitleScreen_O_01.png": {},
 		"src/images/title/TitleScreen_O_02.h": {},
-		"src/images/title/TitleScreen_O_02.png": {},
+		"src/images/title/TitleScreen_O_00.h": {},
 		"src/images/title/TitleScreen_O_03.h": {},
+		"src/images/title/TitleScreen_O_02.png": {},
 		"src/images/title/TitleScreen_O_03.png": {},
 		"src/images/title/TitleScreen_R_00.h": {},
 		"src/images/title/TitleScreen_R_00.png": {},
 		"src/images/title/TitleScreen_R_01.h": {},
-		"src/images/title/TitleScreen_R_01.png": {},
 		"src/images/title/TitleScreen_R_02.h": {},
+		"src/images/title/TitleScreen_R_01.png": {},
 		"src/images/title/TitleScreen_R_02.png": {},
 		"src/images/title/TitleScreen_R_03.h": {},
 		"src/images/title/TitleScreen_R_03.png": {},
@@ -504,40 +585,40 @@
 		"src/images/title/TitleScreen_W_00.png": {},
 		"src/images/title/TitleScreen_W_01.h": {},
 		"src/images/title/TitleScreen_W_01.png": {},
-		"src/images/title/TitleScreen_W_02.h": {},
 		"src/images/title/TitleScreen_W_02.png": {},
+		"src/images/title/TitleScreen_W_02.h": {},
 		"src/images/title/TitleScreen_W_03.h": {},
-		"src/images/title/TitleScreen_W_03.png": {},
 		"src/images/title/TitleScreen_X_04.h": {},
-		"src/images/title/TitleScreen_X_04.png": {},
+		"src/images/title/TitleScreen_W_03.png": {},
 		"src/images/title/TitleScreen_X_05.h": {},
 		"src/images/title/TitleScreen_X_05.png": {},
+		"src/images/title/TitleScreen_X_04.png": {},
 		"src/images/title/TitleScreen_X_06.h": {},
 		"src/images/title/TitleScreen_X_06.png": {},
 		"src/images/title/TitleScreen_X_07.h": {},
-		"src/images/title/TitleScreen_X_07.png": {},
 		"src/images/title/TitleScreen_X_08.h": {},
-		"src/images/title/TitleScreen_X_08.png": {},
-		"src/images/title/TitleScreen_X_09.h": {},
+		"src/images/title/TitleScreen_X_07.png": {},
 		"src/images/title/TitleScreen_X_09.png": {},
+		"src/images/title/TitleScreen_X_09.h": {},
+		"src/images/title/TitleScreen_X_08.png": {},
 		"src/images/title/TitleScreen_Y_04.h": {},
 		"src/images/title/TitleScreen_Y_04.png": {},
 		"src/images/title/TitleScreen_Y_05.h": {},
-		"src/images/title/TitleScreen_Y_05.png": {},
 		"src/images/title/TitleScreen_Y_06.h": {},
+		"src/images/title/TitleScreen_Y_05.png": {},
 		"src/images/title/TitleScreen_Y_06.png": {},
-		"src/images/title/TitleScreen_Y_07.h": {},
 		"src/images/title/TitleScreen_Y_07.png": {},
 		"src/images/title/TitleScreen_Y_08.h": {},
 		"src/images/title/TitleScreen_Y_08.png": {},
+		"src/images/title/TitleScreen_Y_07.h": {},
 		"src/images/title/TitleScreen_Y_09.h": {},
 		"src/images/title/TitleScreen_Y_09.png": {},
 		"src/images/white/Keyboard_W_01.h": {},
 		"src/images/white/Keyboard_W_01.png": {},
 		"src/images/white/Keyboard_W_02.h": {},
-		"src/images/white/Keyboard_W_02.png": {},
 		"src/images/white/Keyboard_W_03.h": {},
 		"src/images/white/Keyboard_W_03.png": {},
+		"src/images/white/Keyboard_W_02.png": {},
 		"src/images/white/Keyboard_W_04.h": {},
 		"src/images/white/Keyboard_W_04.png": {},
 		"src/images/white/Keyboard_W_05.h": {},
@@ -556,8 +637,8 @@
 		"src/images/white/Keyboard_W_11.png": {},
 		"src/images/white/Keyboard_W_12.h": {},
 		"src/images/white/Keyboard_W_12.png": {},
-		"src/images/white/Keyboard_W_13.h": {},
 		"src/images/white/Keyboard_W_13.png": {},
+		"src/images/white/Keyboard_W_13.h": {},
 		"src/images/white/Keyboard_W_14.h": {},
 		"src/images/white/Keyboard_W_14.png": {},
 		"src/images/white/Keyboard_W_15.h": {},
@@ -587,992 +668,7 @@
 		"src/images/white/Keyboard_W_27.h": {},
 		"src/images/white/Keyboard_W_27.png": {},
 		"src/images/white/Keyboard_W_28.h": {},
-		"src/images/white/Keyboard_W_28.png": {},
-		"src/images/man/LeWordCharacter.gif": {},
-		"src/images/man/LightBulb.h": {},
-		"src/images/man/LightBulb.png": {},
-		"src/images/man/Thinking_L.h": {},
-		"src/images/man/Thinking_L.png": {},
-		"src/images/man/Thinking_R.h": {},
-		"src/images/man/Thinking_R.png": {},
-		"src/images/man/Walking_L_00.h": {},
-		"src/images/man/Walking_L_00.png": {},
-		"src/images/man/Walking_L_01.h": {},
-		"src/images/man/Walking_L_01.png": {},
-		"src/images/man/Walking_L_02.h": {},
-		"src/images/man/Walking_L_02.png": {},
-		"src/images/man/Walking_L_03.h": {},
-		"src/images/man/Walking_L_03.png": {},
-		"src/images/man/Walking_R_00.h": {},
-		"src/images/man/Walking_R_00.png": {},
-		"src/images/man/Walking_R_01.h": {},
-		"src/images/man/Walking_R_01.png": {},
-		"src/images/man/Walking_R_02.h": {},
-		"src/images/man/Walking_R_02.png": {},
-		"src/images/man/Walking_R_03.h": {},
-		"src/images/man/Walking_R_03.png": {},
-		"src/images/man/Word_00.h": {},
-		"src/images/man/Word_00.png": {},
-		"src/images/man/Word_01.h": {},
-		"src/images/man/Word_01.png": {},
-		"": {},
-		"/LeWord_Pokitto.bin": {
-			"sdcard": false
-		},
-		"/LeWord_Pokitto.eeprom": {
-			"sdcard": false
-		},
-		"/My_settings.h": {
-			"sdcard": false
-		},
-		"/main.cpp": {
-			"sdcard": false
-		},
-		"/LeWord_Pokitto.elf": {
-			"sdcard": false
-		},
-		"/music": {
-			"sdcard": true
-		},
-		"/project.json": {
-			"sdcard": false
-		},
-		"/src": {
-			"sdcard": false
-		},
-		"/music/LeWord00.img": {
-			"sdcard": false
-		},
-		"/music/LeWord01.img": {
-			"sdcard": false
-		},
-		"/src/LeWord.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord.h": {
-			"sdcard": false
-		},
-		"/src/LeWord_Keyboard.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord_Game.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord_SplashScreen.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord_Statistics.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord_Title.cpp": {
-			"sdcard": false
-		},
-		"/src/LeWord_Utils.cpp": {
-			"sdcard": false
-		},
-		"/src/animations": {
-			"sdcard": false
-		},
-		"/src/dictionary": {
-			"sdcard": false
-		},
-		"/src/images": {
-			"sdcard": false
-		},
-		"/src/utils": {
-			"sdcard": false
-		},
-		"/src/dictionary/Dictionary.h": {
-			"sdcard": false
-		},
-		"/src/animations/Animations.h": {
-			"sdcard": false
-		},
-		"/src/images/Arrow_Down.h": {
-			"sdcard": false
-		},
-		"/src/images/Arrow_Down.png": {
-			"sdcard": false
-		},
-		"/src/images/Arrow_Up.h": {
-			"sdcard": false
-		},
-		"/src/images/Arrow_Up.png": {
-			"sdcard": false
-		},
-		"/src/images/Correct_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/Correct_EN.png": {
-			"sdcard": false
-		},
-		"/src/images/Correct_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/Correct_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/InvalidWord_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/Images.h": {
-			"sdcard": false
-		},
-		"/src/images/InvalidWord_EN.png": {
-			"sdcard": false
-		},
-		"/src/images/InvalidWord_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/InvalidWord_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/Pointer.h": {
-			"sdcard": false
-		},
-		"/src/images/Pointer.png": {
-			"sdcard": false
-		},
-		"/src/images/Quit_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/Quit_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/Quit_EN.png": {
-			"sdcard": false
-		},
-		"/src/images/Quit_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/TooManyAttempts_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/TooManyAttempts_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/black": {
-			"sdcard": false
-		},
-		"/src/images/TooManyAttempts_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/man": {
-			"sdcard": false
-		},
-		"/src/images/splash": {
-			"sdcard": false
-		},
-		"/src/images/statistics": {
-			"sdcard": false
-		},
-		"/src/images/title": {
-			"sdcard": false
-		},
-		"/src/images/white": {
-			"sdcard": false
-		},
-		"/src/images/TooManyAttempts_EN.png": {
-			"sdcard": false
-		},
-		"/src/utils/Constants.h": {
-			"sdcard": false
-		},
-		"/src/utils/Enums.h": {
-			"sdcard": false
-		},
-		"/src/utils/GameCookie.h": {
-			"sdcard": false
-		},
-		"/src/utils/SFXVolumeSource.hpp": {
-			"sdcard": false
-		},
-		"/src/utils/Utils.h": {
-			"sdcard": false
-		},
-		"/src/utils/Structs.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_01.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_02.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_01.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_02.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_03.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_03.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_04.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_04.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_05.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_05.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_06.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_06.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_07.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_08.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_07.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_08.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_09.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_09.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_11.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_10.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_10.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_12.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_11.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_12.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_13.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_13.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_14.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_14.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_15.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_15.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_16.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_16.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_17.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_17.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_18.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_18.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_19.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_19.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_20.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_20.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_21.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_21.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_22.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_22.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_23.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_23.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_24.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_24.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_25.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_25.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_26.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_26.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_27.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_28.h": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_27.png": {
-			"sdcard": false
-		},
-		"/src/images/black/Keyboard_B_28.png": {
-			"sdcard": false
-		},
-		"/src/images/man/LeWordCharacter.gif": {
-			"sdcard": false
-		},
-		"/src/images/man/LightBulb.h": {
-			"sdcard": false
-		},
-		"/src/images/man/LightBulb.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Thinking_L.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Thinking_L.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Thinking_R.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Thinking_R.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_00.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_00.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_01.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_02.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_01.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_02.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_03.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_L_03.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_00.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_00.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_01.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_01.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_02.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_02.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_03.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Walking_R_03.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Word_00.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Word_00.png": {
-			"sdcard": false
-		},
-		"/src/images/man/Word_01.h": {
-			"sdcard": false
-		},
-		"/src/images/man/Word_01.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_00.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_00.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_01.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_01.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_02.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_02.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_03.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_03.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_Arrow.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_Arrow.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_Full.h": {
-			"sdcard": false
-		},
-		"/src/images/splash/Ppot_Full.png": {
-			"sdcard": false
-		},
-		"/src/images/splash/Splash.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_EN.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Header_EN.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Header_EN.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Header_FR.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Vert.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Header_FR.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Statistics_Vert.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_00.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_00.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_01.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_01.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_02.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_02.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_03.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_03.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_04.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_04.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_05.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_05.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_06.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_06.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_07.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_07.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_08.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_09.h": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_08.png": {
-			"sdcard": false
-		},
-		"/src/images/statistics/Stats_09.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_D_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_E_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_L_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Lower.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Lower.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_O_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_R_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_00.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_00.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_01.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_01.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_02.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_02.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_03.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_W_03.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_04.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_04.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_05.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_05.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_06.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_06.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_07.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_07.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_08.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_08.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_09.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_X_09.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_04.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_04.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_05.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_05.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_06.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_06.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_07.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_07.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_08.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_08.png": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_09.h": {
-			"sdcard": false
-		},
-		"/src/images/title/TitleScreen_Y_09.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_01.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_01.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_02.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_02.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_03.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_03.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_04.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_05.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_04.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_05.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_06.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_06.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_07.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_07.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_08.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_08.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_09.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_09.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_10.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_10.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_11.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_11.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_12.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_12.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_13.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_13.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_14.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_14.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_15.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_15.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_16.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_16.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_17.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_17.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_18.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_18.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_19.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_19.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_20.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_20.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_21.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_21.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_22.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_22.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_23.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_23.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_24.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_24.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_25.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_25.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_26.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_26.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_27.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_27.png": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_28.h": {
-			"sdcard": false
-		},
-		"/src/images/white/Keyboard_W_28.png": {
-			"sdcard": false
-		},
-		"/LeWord_Pokitto.bin.1.png": {
-			"sdcard": false
-		},
-		"/LeWord_Pokitto.bin.1.h": {
-			"sdcard": false
-		}
+		"src/images/white/Keyboard_W_28.png": {}
 	},
 	"ideVersion": 10000,
 	"BUILDFlags": {

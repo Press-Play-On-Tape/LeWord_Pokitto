@@ -2,7 +2,7 @@
 
 #pragma once
 
-const uint8_t Pointer[] = {
+inline constexpr uint8_t Pointer[] = {
 4, 5,
 0x70,0x00,
 0x77,0x00,
