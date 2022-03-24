@@ -17,7 +17,6 @@ namespace Images {
     #include "RedTape_02.h"
     #include "RedTape_Shadow.h"
 
-    #include "Pause.h"
     #include "ArrowLeft.h"
     #include "ArrowRight.h"
 

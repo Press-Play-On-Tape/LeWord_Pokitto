@@ -4,6 +4,7 @@
 #include "src/utils/GameCookie.h"
 #include "src/utils/Enums.h"
 #include "src/LeWord.h"
+#include "src/utils/DuelPalette.h"
 
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
@@ -19,14 +20,13 @@ int main() {
     cookie.begin("LeWord", sizeof(cookie), (char*)&cookie);
 
     PC::begin();
-    PD::loadRGBPalette(palettePico);  
+    PD::loadRGBPalette(duel);  
     PD::persistence = true;
     PD::setColor(5);
-    PD::setInvisibleColor(14);
+    PD::setInvisibleColor(255);
     PC::setFrameRate(40);
     PD::textWrap = false;
     PD::adjustCharStep = -1;
-//    PD::setFont(font3x5);
 
 
     // Has the cookie been initialised?
