@@ -793,7 +793,19 @@
 		"distributable/Icon24x24.h": {},
 		"distributable/Icon32x32.h": {},
 		"distributable/LeWord_Banner-01.h": {},
-		"distributable/ScreenRecording.h": {}
+		"distributable/ScreenRecording.h": {},
+		"distributable/LeWord": {},
+		"distributable/LeWord/music": {},
+		"distributable/LeWord/LeWord.pop": {},
+		"distributable/LeWord/music/LeWord00.img": {},
+		"distributable/LeWord/music/LeWord02.raw": {},
+		"distributable/LeWord/music/LeWord03.raw": {},
+		"distributable/LeWord/music/uncompressed": {},
+		"distributable/LeWord/music/LeWord04.raw": {},
+		"distributable/LeWord/music/LeWord01.img": {},
+		"distributable/LeWord/music/uncompressed/LeWord02.raw": {},
+		"distributable/LeWord/music/uncompressed/LeWord03.raw": {},
+		"distributable/LeWord/music/uncompressed/LeWord04.raw": {}
 	},
 	"ideVersion": 10000,
 	"BUILDFlags": {
