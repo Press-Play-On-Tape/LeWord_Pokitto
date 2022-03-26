@@ -24,5 +24,14 @@ namespace Constants {
     constexpr uint16_t Key_Flash = 32;
     constexpr uint8_t NumberOfLetters = 14;
 
+    constexpr uint8_t Black = 0;
+    constexpr uint8_t White = 7;
+    constexpr uint8_t Orange = 0xFC;
+    constexpr uint8_t Green = 0x35;
+    constexpr uint8_t DarkGrey = 2;
+    constexpr uint8_t LightGrey = 5;
+    constexpr uint8_t Transparent = 255;
+  
+
 };
 

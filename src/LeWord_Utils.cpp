@@ -148,7 +148,7 @@ void Game::moveCursor(Direction direction) {
 }
 
 CheckState Game::checkWord() {
-
+// printf("checkWord Start\n");   
     uint8_t guessWord[5];
     uint8_t testWord[5];
     uint8_t answer[5];
@@ -189,6 +189,7 @@ CheckState Game::checkWord() {
     switch (this->gamePlayVars.mode) {
 
         case GameMode::English:
+// printf("checkWord English\n");        
             alphaStart = Dictionary::English_AlphaMap[startPos] * 6;
             break;
 
@@ -285,6 +286,8 @@ CheckState Game::checkWord() {
 
             // Disable the keys for letters not found in solution ..
 
+            uint8_t letterCount = 0;
+
             for (uint8_t i = 0; i < 5; i++) {
 
                 switch (this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i]) {
@@ -295,12 +298,14 @@ CheckState Game::checkWord() {
 
                     case GuessState::Correct: 
                         this->gamePlayVars.keyboard.keys[guessWord[i] - 65] = KeyState::Correct;
+                        letterCount++;
                         break;
 
                     case GuessState::WrongPosition: 
                         if (this->gamePlayVars.keyboard.keys[guessWord[i] - 65] == KeyState::Visible) {
                             this->gamePlayVars.keyboard.keys[guessWord[i] - 65] = KeyState::WrongPosition;
                         }
+                        letterCount++;
                         break;
             
                 }
@@ -318,6 +323,29 @@ CheckState Game::checkWord() {
             
                 }
             
+            }
+
+
+            // Play tune ..
+
+            switch (letterCount) {
+
+                case 1:
+                    this->sounds.playSoundEffect(Sounds::Effects::Ding_00, this->cookie->sfx);
+                    break;
+
+                case 2:
+                    this->sounds.playSoundEffect(Sounds::Effects::Ding_01, this->cookie->sfx);
+                    break;
+
+                case 3:
+                    this->sounds.playSoundEffect(Sounds::Effects::Ding_02, this->cookie->sfx);
+                    break;
+
+                case 4:
+                    this->sounds.playSoundEffect(Sounds::Effects::Ding_03, this->cookie->sfx);
+                    break;
+
             }
 
             return CheckState::RealWord;

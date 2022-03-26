@@ -19,7 +19,7 @@ struct Letter {
         this->y = random(-32, 88);
         this->x = random(-512, 512);
         this->speed = random(0, 3);
-        this->image = random(0, 23);
+        this->image = random(0, 32);
 
         switch (this->x) {
 
@@ -55,7 +55,7 @@ struct TitleScreenVars {
     uint8_t charIndex = 0;
     uint8_t frameIndex = 0;
 
-    TitleScreenMode index = TitleScreenMode::Language;
+    TitleScreenMode index = TitleScreenMode::English;
     
     void reset() {
 

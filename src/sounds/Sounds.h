@@ -3,6 +3,10 @@
 #include <LibAudio>
 #include "../Utils/SFXVolumeSource.hpp"
 #include "Success.h"
+#include "Ding_00.h"
+#include "Ding_01.h"
+#include "Ding_02.h"
+#include "Ding_03.h"
 
 struct Sounds {
 
@@ -28,9 +32,12 @@ struct Sounds {
     }
 
     enum class Effects : uint8_t {
-        Success
+        Success,
+        Ding_00,
+        Ding_01,
+        Ding_02,
+        Ding_03,
     };
-
 
     void updateFades() {
 
@@ -137,7 +144,23 @@ struct Sounds {
                 switch (soundEffect) {
                     
                     case Sounds::Effects::Success:
-                       Audio::play<2>(sfx_Success, 255, 1);        
+                        Audio::play<2>(sfx_Success, 255, 1);        
+                        break;
+                    
+                    case Sounds::Effects::Ding_00:
+                        Audio::play<2>(sfx_Ding_00, 255, 1);        
+                        break;
+                    
+                    case Sounds::Effects::Ding_01:
+                        Audio::play<2>(sfx_Ding_01, 255, 1);        
+                        break;
+                    
+                    case Sounds::Effects::Ding_02:
+                        Audio::play<2>(sfx_Ding_02, 255, 1);        
+                        break;
+                    
+                    case Sounds::Effects::Ding_03:
+                        Audio::play<2>(sfx_Ding_03, 255, 1);        
                         break;
 
                 }
@@ -149,17 +172,5 @@ struct Sounds {
         }
 
     }    
-
-
-    void playSoundEffect_FromSD(Sounds::Effects soundEffect) {
-
-        constexpr char sounds[1][19] = { "music/Astaro05.raw" }; // Coins
-
-        if (this->soundEffectFile.openRO(sounds[0])) {
-            this->music = &Audio::play<2>(soundEffectFile);
-            this->music->setLoop(false);
-        }
-
-    }
     
 };

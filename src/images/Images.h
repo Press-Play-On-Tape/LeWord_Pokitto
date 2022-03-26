@@ -142,30 +142,42 @@ namespace Images {
     #include "title/Sound_SFX_Inactive.h"
     #include "title/Sound_SFX_White.h"
 
-    #include "background/Large_A_DarkBlue.h"
-    #include "background/Large_A_DarkerBlue.h"
-    #include "background/Large_B_DarkBlue.h"
-    #include "background/Large_B_DarkerBlue.h"
-    #include "background/Large_C_DarkBlue.h"
-    #include "background/Large_C_DarkerBlue.h"
-    #include "background/Large_D_DarkBlue.h"
-    #include "background/Large_D_DarkerBlue.h"
-    #include "background/Medium_A_DarkBlue.h"
-    #include "background/Medium_A_DarkerBlue.h"
-    #include "background/Medium_B_DarkBlue.h"
-    #include "background/Medium_B_DarkerBlue.h"
-    #include "background/Medium_C_DarkBlue.h"
-    #include "background/Medium_C_DarkerBlue.h"
-    #include "background/Medium_D_DarkBlue.h"
-    #include "background/Medium_D_DarkerBlue.h"
-    #include "background/Small_A_DarkBlue.h"
-    #include "background/Small_A_DarkerBlue.h"
-    #include "background/Small_B_DarkBlue.h"
-    #include "background/Small_B_DarkerBlue.h"
-    #include "background/Small_C_DarkBlue.h"
-    #include "background/Small_C_DarkerBlue.h"
-    #include "background/Small_D_DarkBlue.h"
-    #include "background/Small_D_DarkerBlue.h"
+    #include "background/Large_A_Colour_00.h"
+    #include "background/Large_A_Colour_01.h"
+    #include "background/Large_A_Colour_02.h"
+    #include "background/Large_B_Colour_00.h"
+    #include "background/Large_B_Colour_01.h"
+    #include "background/Large_B_Colour_02.h"
+    #include "background/Large_C_Colour_00.h"
+    #include "background/Large_C_Colour_01.h"
+    #include "background/Large_C_Colour_02.h"
+    #include "background/Large_D_Colour_00.h"
+    #include "background/Large_D_Colour_01.h"
+    #include "background/Large_D_Colour_02.h"
+    #include "background/Medium_A_Colour_00.h"
+    #include "background/Medium_A_Colour_01.h"
+    #include "background/Medium_A_Colour_02.h"
+    #include "background/Medium_B_Colour_00.h"
+    #include "background/Medium_B_Colour_01.h"
+    #include "background/Medium_B_Colour_02.h"
+    #include "background/Medium_C_Colour_00.h"
+    #include "background/Medium_C_Colour_01.h"
+    #include "background/Medium_C_Colour_02.h"
+    #include "background/Medium_D_Colour_00.h"
+    #include "background/Medium_D_Colour_01.h"
+    #include "background/Medium_D_Colour_02.h"
+    #include "background/Small_A_Colour_00.h"
+    #include "background/Small_A_Colour_01.h"
+    #include "background/Small_A_Colour_02.h"
+    #include "background/Small_B_Colour_00.h"
+    #include "background/Small_B_Colour_01.h"
+    #include "background/Small_B_Colour_02.h"
+    #include "background/Small_C_Colour_00.h"
+    #include "background/Small_C_Colour_01.h"
+    #include "background/Small_C_Colour_02.h"
+    #include "background/Small_D_Colour_00.h"
+    #include "background/Small_D_Colour_01.h"
+    #include "background/Small_D_Colour_02.h"
 
     const uint8_t * const Stats[10] = {
         Stats_00,
@@ -368,31 +380,43 @@ namespace Images {
         TitleScreen_D_01, 
     };
 
-    const uint8_t * const Letters[24] = {
-        Large_A_DarkBlue,
-        Large_A_DarkerBlue,
-        Large_B_DarkBlue,
-        Large_B_DarkerBlue,
-        Large_C_DarkBlue,
-        Large_C_DarkerBlue,
-        Large_D_DarkBlue,
-        Large_D_DarkerBlue,
-        Medium_A_DarkBlue,
-        Medium_A_DarkerBlue,
-        Medium_B_DarkBlue,
-        Medium_B_DarkerBlue,
-        Medium_C_DarkBlue,
-        Medium_C_DarkerBlue,
-        Medium_D_DarkBlue,
-        Medium_D_DarkerBlue,
-        Small_A_DarkBlue,
-        Small_A_DarkerBlue,
-        Small_B_DarkBlue,
-        Small_B_DarkerBlue,
-        Small_C_DarkBlue,
-        Small_C_DarkerBlue,
-        Small_D_DarkBlue,
-        Small_D_DarkerBlue,
+    const uint8_t * const Letters[36] = {
+        Large_A_Colour_00,
+        Large_A_Colour_01,
+        Large_A_Colour_02,
+        Large_B_Colour_00,
+        Large_B_Colour_01,
+        Large_B_Colour_02,
+        Large_C_Colour_00,
+        Large_C_Colour_01,
+        Large_C_Colour_02,
+        Large_D_Colour_00,
+        Large_D_Colour_01,
+        Large_D_Colour_02,
+        Medium_A_Colour_00,
+        Medium_A_Colour_01,
+        Medium_A_Colour_02,
+        Medium_B_Colour_00,
+        Medium_B_Colour_01,
+        Medium_B_Colour_02,
+        Medium_C_Colour_00,
+        Medium_C_Colour_01,
+        Medium_C_Colour_02,
+        Medium_D_Colour_00,
+        Medium_D_Colour_01,
+        Medium_D_Colour_02,
+        Small_A_Colour_00,
+        Small_A_Colour_01,
+        Small_A_Colour_02,
+        Small_B_Colour_00,
+        Small_B_Colour_01,
+        Small_B_Colour_02,
+        Small_C_Colour_00,
+        Small_C_Colour_01,
+        Small_C_Colour_02,
+        Small_D_Colour_00,
+        Small_D_Colour_01,
+        Small_D_Colour_02,
     };
 
 };

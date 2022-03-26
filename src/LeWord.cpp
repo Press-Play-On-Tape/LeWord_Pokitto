@@ -127,7 +127,7 @@ void Game::renderBackground() {
                     letter.y = random(-32, 88);
                     letter.x =  random(112, 512);
                     letter.speed = random(0, 3);    
-                    letter.image = random(0, 23);
+                    letter.image = random(0, 32);
                 }
                 break;
 
@@ -158,7 +158,7 @@ void Game::renderBackground() {
                     letter.y = random(-32, 88);
                     letter.x =  random(-512, 0);
                     letter.speed = random(0, 3);                
-                    letter.image = random(0, 23);
+                    letter.image = random(0, 32);
                 }
 
                 break;

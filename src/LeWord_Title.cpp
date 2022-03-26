@@ -22,99 +22,129 @@ void Game::title_Init() {
 void Game::title() { 
 
     if (PC::buttons.pressed(BTN_A)) {
-        
-        this->gameState = GameState::Game_Init; 
-        this->sounds.fadeMode = FadeMode::FadeOut;
+
+        switch (titleScreenVars.index) {
+
+            case TitleScreenMode::English:
+                this->gamePlayVars.mode = GameMode::English; 
+                this->cookie->setMode(this->gamePlayVars.mode);
+                this->gameState = GameState::Game_Init; 
+                this->sounds.fadeMode = FadeMode::FadeOut;
+                break;
+
+            case TitleScreenMode::French:
+                this->gamePlayVars.mode = GameMode::French; 
+                this->cookie->setMode(this->gamePlayVars.mode);
+                this->gameState = GameState::Game_Init; 
+                this->sounds.fadeMode = FadeMode::FadeOut;
+                break;
+
+            case TitleScreenMode::EnglishStats:
+                this->gamePlayVars.mode = GameMode::English; 
+                this->statisticsScreenVars.numberOfAttempts = 7;
+                this->gameState = GameState::Stats_Init; 
+                break;
+
+            case TitleScreenMode::FrenchStats:
+                this->gamePlayVars.mode = GameMode::French; 
+                this->statisticsScreenVars.numberOfAttempts = 7;
+                this->gameState = GameState::Stats_Init; 
+                break;
+
+        }        
 
     }
 
     if (PC::buttons.pressed(BTN_LEFT)) {
         
-        if (titleScreenVars.index == TitleScreenMode::Language) {
+        if (titleScreenVars.index != TitleScreenMode::English) {
 
-            if (this->gamePlayVars.mode == GameMode::French) {
-                
-                this->gamePlayVars.mode = GameMode::English; 
-                this->cookie->setMode(this->gamePlayVars.mode);
-
-            }
+            titleScreenVars.index--;
     
-        }
-        else {
-
-            titleScreenVars.index = TitleScreenMode::Language;
-
         }
 
     }
 
     if (PC::buttons.pressed(BTN_RIGHT)) {
         
-        if (titleScreenVars.index == TitleScreenMode::Language) {
+        if (titleScreenVars.index != TitleScreenMode::SoundEffects) {
             
-            if (this->gamePlayVars.mode == GameMode::English) {
-            
-                this->gamePlayVars.mode = GameMode::French; 
-                this->cookie->setMode(this->gamePlayVars.mode);
+             titleScreenVars.index++;
 
-            }
-            else {
+        }
 
+    }
+
+    if (PC::buttons.pressed(BTN_UP)) {
+    
+        switch (titleScreenVars.index) {
+
+            case TitleScreenMode::EnglishStats:
+                titleScreenVars.index = TitleScreenMode::English;
+                break;
+
+            case TitleScreenMode::FrenchStats:
+                titleScreenVars.index = TitleScreenMode::French;
+                break;
+
+            case TitleScreenMode::SoundEffects:
+
+                this->cookie->sfx--;
+                this->cookie->saveCookie();
+
+                if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
+
+                    this->sounds.muteTheme();
+                    
+                }
+                else {
+
+                    this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
+
+                }
+
+                break;
+
+        }                
+
+    }
+    else if (PC::buttons.pressed(BTN_DOWN)) {
+
+        switch (titleScreenVars.index) {
+
+            case TitleScreenMode::English:
+                titleScreenVars.index = TitleScreenMode::EnglishStats;
+                break;
+
+            case TitleScreenMode::French:
+                titleScreenVars.index = TitleScreenMode::FrenchStats;
+                break;
+
+            case TitleScreenMode::FrenchStats:
                 titleScreenVars.index = TitleScreenMode::SoundEffects;
+                break;
 
-            }
+            case TitleScreenMode::SoundEffects:
 
-        }
+                this->cookie->sfx++;
+                this->cookie->saveCookie();
 
-    }
+                if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
 
-    if (PC::buttons.pressed(BTN_B)) {
+                    this->sounds.muteTheme();
+                    
+                }
+                else {
+
+                    this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
+                    
+                }
+
+                break;
+
+        }        
         
-        this->statisticsScreenVars.numberOfAttempts = 7;
-        this->gameState = GameState::Stats_Init; 
-
     }
-
-    if (titleScreenVars.index == TitleScreenMode::SoundEffects && (PC::buttons.pressed(BTN_UP) || PC::buttons.pressed(BTN_DOWN))) {
-        
-        if (PC::buttons.pressed(BTN_UP)) {
-
-            this->cookie->sfx--;
-            this->cookie->saveCookie();
-
-            if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
-
-                this->sounds.muteTheme();
-                
-            }
-            else {
-
-                this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
-
-            }
-
-        }
-
-        if (PC::buttons.pressed(BTN_DOWN)) {
-
-            this->cookie->sfx++;
-            this->cookie->saveCookie();
-
-            if (this->cookie->sfx != SoundSettings::Both && this->cookie->sfx != SoundSettings::Music) {
-
-                this->sounds.muteTheme();
-                
-            }
-            else {
-
-                this->sounds.playTheme(this->cookie->track, this->cookie->sfx);
-                
-            }
-            
-        }
-
-    }
-
 
     uint8_t indexes[6] = { 0, 0, 0, 0, 0, 0, };
 
@@ -143,9 +173,28 @@ void Game::title() {
     PD::drawBitmap(73, 26, Images::TitleScreen_R[indexes[4]]);
     PD::drawBitmap(90, 26, Images::TitleScreen_D[indexes[5]]);
 
-    PD::drawBitmap(0, 57, titleScreenVars.index == TitleScreenMode::Language ? Images::TitleScreen_Lower: Images::TitleScreen_Lower_Inactive);
-    PD::drawBitmap(this->gamePlayVars.mode == GameMode::English ? 7 : 65, 57, titleScreenVars.index == TitleScreenMode::Language ? Images::Pointer: Images::Pointer_Inactive);
+    PD::drawBitmap(0, 57, titleScreenVars.index != TitleScreenMode::SoundEffects ? Images::TitleScreen_Lower: Images::TitleScreen_Lower_Inactive);
 
+    switch (titleScreenVars.index) {
+
+        case TitleScreenMode::English:
+            PD::drawBitmap(7, 57, Images::Pointer);
+            break;
+
+        case TitleScreenMode::French:
+            PD::drawBitmap(65, 57, Images::Pointer);
+            break;
+
+        case TitleScreenMode::EnglishStats:
+            PD::drawBitmap(7, 67, Images::Pointer);
+            break;
+
+        case TitleScreenMode::FrenchStats:
+            PD::drawBitmap(65, 67, Images::Pointer);
+            break;
+
+
+    }        
 
     switch (this->cookie->sfx) {
 

@@ -86,31 +86,31 @@ void Game::statistics() {
         case StatisticsMode::PageOne:
 
             if (this->gamePlayVars.mode == GameMode::English) {
-                PD::drawBitmap(0, 5, Images::Statistics_Header_EN);
-                PD::drawBitmap(0, 18, Images::Statistics_EN);
+                PD::drawBitmap(0, 9, Images::Statistics_Header_EN);
+                PD::drawBitmap(0, 22, Images::Statistics_EN);
             }
             else {
-                PD::drawBitmap(0, 5, Images::Statistics_Header_FR);
-                PD::drawBitmap(0, 18, Images::Statistics_FR);
+                PD::drawBitmap(0, 9, Images::Statistics_Header_FR);
+                PD::drawBitmap(0, 22, Images::Statistics_FR);
             }
 
-            PD::setColor(7);
-            PD::setCursor(16, 24);
+            PD::setColor(Constants::White);
+            PD::setCursor(16, 29);
             if (gamesPlayed < 100) { PD::print("0"); }
             if (gamesPlayed < 10)  { PD::print("0"); }
             PD::print(gamesPlayed);
 
-            PD::setCursor(71, 24);
+            PD::setCursor(71, 29);
             if (percent < 100) { PD::print("0"); }
             if (percent < 10)  { PD::print("0"); }
             PD::print(percent);
 
-            PD::setCursor(16, 49);
+            PD::setCursor(16, 54);
             if (currentStreak < 100) { PD::print("0"); }
             if (currentStreak < 10)  { PD::print("0"); }
             PD::print(currentStreak);
 
-            PD::setCursor(71, 49);
+            PD::setCursor(71, 54);
             if (maxStreak < 100) { PD::print("0"); }
             if (maxStreak < 10)  {PD::print("0"); }
             PD::print(maxStreak);
@@ -120,13 +120,13 @@ void Game::statistics() {
         case StatisticsMode::PageTwo:
 
             if (this->gamePlayVars.mode == GameMode::English) {
-                PD::drawBitmap(0, 5, Images::Statistics_Header_EN);
+                PD::drawBitmap(0, 9, Images::Statistics_Header_EN);
             }
             else {
-                PD::drawBitmap(0, 5, Images::Statistics_Header_FR);
+                PD::drawBitmap(0, 9, Images::Statistics_Header_FR);
             }
 
-            PD::drawBitmap(2, 25, Images::Statistics_Vert);
+            PD::drawBitmap(2, 29, Images::Statistics_Vert);
 
             for (uint8_t i = 0; i < 6; i++) {
 
@@ -137,13 +137,13 @@ void Game::statistics() {
                 if (val != 0 && textWidth > width) width = textWidth + 1;
 
                 if (i + 1 == this->statisticsScreenVars.numberOfAttempts) {
-                    PD::setColor(12, 0);
+                    PD::setColor(Constants::Orange, Constants::Black);
                 }
                 else {
-                    PD::setColor(5, 0);
+                    PD::setColor(Constants::DarkGrey, Constants::Black);
                 }
 
-                PD::fillRect(12, 25 + (i * 8), width == 0 ? 1 : width, 6);
+                PD::fillRect(12, 29 + (i * 8), width == 0 ? 1 : width, 6);
 
                 if (val > 0) {
 
@@ -155,7 +155,7 @@ void Game::statistics() {
 
                         if (digits[j] != 0 || firstDigitRendered) {
 
-                            PD::drawBitmap(12 + width - (j * 4) - 5, 25 + (i * 8), Images::Stats[digits[j]]);
+                            PD::drawBitmap(12 + width - (j * 4) - 5, 29 + (i * 8), Images::Stats[digits[j]]);
                             firstDigitRendered = true;
 
                         }

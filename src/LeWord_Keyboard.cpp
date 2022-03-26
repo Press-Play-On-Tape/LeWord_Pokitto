@@ -16,8 +16,8 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
     constexpr uint8_t key_Width = 10;
     constexpr uint8_t key_Height = 11;
 
-    PD::setColor(0);
-    PD::fillRect(xOffset - 1, yOffset + 1, 93, 50);
+    PD::setColor(Constants::Black);
+    //PD::fillRect(xOffset - 1, yOffset + 1, 93, 50);
 
     for (uint8_t i = 0; i < 26; i++) {
 
@@ -30,26 +30,26 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
         switch (this->gamePlayVars.keyboard.keys[i]) {
 
             case KeyState::Visible:
-                PD::setColor(6, 0);
+                PD::setColor(Constants::LightGrey, Constants::Black);
                 PD::fillRect(x + xOffset + 1, y + yOffset + 2, key_Width - 2, key_Height - 3);
                 PD::drawBitmap(x + xOffset, y + 1 + yOffset, Images::Keyboard_B[i]);
                 break;
 
             case KeyState::WrongPosition:
-                PD::setColor(9, 0);
+                PD::setColor(Constants::Orange, Constants::Black);
                 PD::fillRect(x + xOffset + 1, y + yOffset + 2, key_Width - 2, key_Height - 3);
                 PD::drawBitmap(x + xOffset, y + 1 + yOffset, Images::Keyboard_W[i]);
                 break;
 
             case KeyState::Correct:
-                PD::setColor(3, 0);
+                PD::setColor(Constants::Green, Constants::Black);
                 PD::fillRect(x + xOffset + 1, y + yOffset + 2, key_Width - 2, key_Height - 3);
                 PD::drawBitmap(x + xOffset, y + 1 + yOffset, Images::Keyboard_W[i]);
                 break;
 
             case KeyState::Invisible:
-                PD::setColor(5, 0);
-                PD::fillRect(x + xOffset + 1, y + yOffset + 2, key_Width - 2, key_Height - 3);
+                PD::setColor(Constants::DarkGrey, Constants::Transparent);
+                //PD::fillRect(x + xOffset + 1, y + yOffset + 2, key_Width - 2, key_Height - 3);
                 PD::drawBitmap(x + xOffset, y + 1 + yOffset, Images::Keyboard_W[i]);
                 break;
                 
@@ -57,7 +57,7 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
 
         if (xPos == this->gamePlayVars.keyboard.xCursor && yPos == this->gamePlayVars.keyboard.yCursor && this->gamePlayVars.keyboard.state == KeyboardState::Showing) {
 
-            PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? 7 : 0, 0);
+            PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? Constants::White : Constants::Black, Constants::Black);
             PD::drawRect(x + xOffset + 1, y + yOffset + 2, key_Width - 3, key_Height - 3);
 
         }
@@ -68,13 +68,13 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
 
     // Delete key ..
 
-    PD::setColor(6, 0);
+    PD::setColor(Constants::LightGrey, Constants::Black);
     PD::fillRect(xOffset + 1, 2 * (key_Height - 1) + 2 + yOffset, key_Width, key_Height - 3);
     PD::drawBitmap(xOffset, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[26]);
 
     if (this->gamePlayVars.keyboard.xCursor == 0 && this->gamePlayVars.keyboard.yCursor == 2) {
 
-        PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? 7 : 0, 0);
+        PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? Constants::White : Constants::Black, Constants::Black);
         PD::drawRect(xOffset + 1, yOffset + (2 * (key_Height - 1)) + 2, key_Width - 1, key_Height - 3);
 
     }
@@ -82,16 +82,16 @@ void Game::drawKeyboard(uint8_t xOffset, uint8_t yOffset) {
 
     // Enter Key ..
 
-    PD::setColor(6, 0);
+    PD::setColor(Constants::LightGrey, Constants::Black);
     PD::fillRect(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 3, 2 * (key_Height - 1) + 2 + yOffset, key_Width + 5, key_Height - 3);
     PD::drawBitmap(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 2, 2 * (key_Height - 1) + 1 + yOffset, Images::Keyboard_B[27]);
 
     if (this->gamePlayVars.keyboard.xCursor == 8 && this->gamePlayVars.keyboard.yCursor == 2) {
-        PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? 7 : 0, 0);
+        PD::setColor(PC::frameCount % Constants::Key_Flash < Constants::Key_Flash / 2 ? Constants::White : Constants::Black, Constants::Black);
         PD::drawRect(7 * (key_Width - 1) + (key_Width - 1) + xOffset + 3, 2 * (key_Height - 1) + 2 + yOffset, key_Width + 4, key_Height - 3);
     }
 
-    PD::setColor(7);
+    PD::setColor(Constants::White);
     PD::drawFastHLine(xOffset, yOffset, 91);
     PD::drawFastVLine(xOffset - 1, yOffset + 1, 50);
     PD::drawFastVLine(xOffset + 91, yOffset + 1, 50);
