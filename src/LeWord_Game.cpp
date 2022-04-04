@@ -277,7 +277,7 @@ void Game::game() {
                     }
 
                     if (!hasSpace) {
-// printf("sdasdasd\n");
+
                         this->gamePlayVars.checkState = checkWord();
 
                         switch (this->gamePlayVars.checkState) {

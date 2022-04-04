@@ -148,7 +148,7 @@ void Game::moveCursor(Direction direction) {
 }
 
 CheckState Game::checkWord() {
-// printf("checkWord Start\n");   
+
     uint8_t guessWord[5];
     uint8_t testWord[5];
     uint8_t answer[5];
@@ -158,6 +158,7 @@ CheckState Game::checkWord() {
         answer[i] = this->gamePlayVars.selectedWord[i];
         this->gamePlayVars.guesses.state[this->gamePlayVars.guesses.yCursor][i] = GuessState::Incorrect;
     }
+
 
 
     // Is the word correct?
@@ -186,10 +187,10 @@ CheckState Game::checkWord() {
     uint16_t startPos = ((guessWord[0] - 65) * 26) + (guessWord[1] - 65);
     char status = ' ';
 
+
     switch (this->gamePlayVars.mode) {
 
         case GameMode::English:
-// printf("checkWord English\n");        
             alphaStart = Dictionary::English_AlphaMap[startPos] * 6;
             break;
 
@@ -199,6 +200,15 @@ CheckState Game::checkWord() {
 
     }
 
+    
+    // No matching letters?
+
+    if (alphaStart == 0xFFFF) {
+
+        return CheckState::InvalidWord;
+
+    }
+    
     while (true) {
 
         file.seek(alphaStart);
