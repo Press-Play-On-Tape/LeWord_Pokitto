@@ -66,6 +66,7 @@ namespace Images {
     #include "Correct_EN.h"
     #include "Correct_FR.h"
     #include "InvalidWord_EN.h"
+    #include "InvalidWord_EN_Hanski.h"
     #include "InvalidWord_FR.h"
     #include "TooManyAttempts_EN.h"
     #include "TooManyAttempts_FR.h"

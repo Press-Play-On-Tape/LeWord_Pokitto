@@ -126,6 +126,7 @@ void Game::game() {
     switch (this->gamePlayVars.checkState) {
 
         case CheckState::InvalidWord:
+        case CheckState::InvalidWord_Hanski:
             if (PC::buttons.pressed(BTN_A) || PC::buttons.pressed(BTN_B)) {
                 this->gamePlayVars.checkState = CheckState::Normal;
             }
@@ -288,6 +289,7 @@ void Game::game() {
                                 break;
 
                             case CheckState::InvalidWord:
+                            case CheckState::InvalidWord_Hanski:
                                 this->gamePlayVars.showInvalidWord_Count = 15;
                                 break;
 
@@ -374,6 +376,10 @@ void Game::renderScreen() {
             else {
                 PD::drawBitmap(0, 72, Images::InvalidWord_FR);
             }
+            break;
+
+        case CheckState::InvalidWord_Hanski:
+            PD::drawBitmap(14, 62, Images::InvalidWord_EN_Hanski);
             break;
 
         case CheckState::CorrectWord:
@@ -478,6 +484,7 @@ void Game::drawGuesses(int8_t yOffset) {
         switch (this->gamePlayVars.checkState) {
 
             case CheckState::InvalidWord:
+            case CheckState::InvalidWord_Hanski:
 
                 if (y == this->gamePlayVars.guesses.yCursor) {
                     if (this->gamePlayVars.showInvalidWord_Count > 0) {

@@ -95,6 +95,7 @@ enum class CheckState : uint8_t {
     RealWord,
     TooManyAttempts,
     Quit,
+    InvalidWord_Hanski,
 };
 
 enum KeyboardState : uint8_t {

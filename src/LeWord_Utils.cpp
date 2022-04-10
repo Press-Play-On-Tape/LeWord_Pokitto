@@ -152,7 +152,7 @@ CheckState Game::checkWord() {
     uint8_t guessWord[5];
     uint8_t testWord[5];
     uint8_t answer[5];
-    
+
     for (uint8_t i = 0; i < 5; i++) {
         guessWord[i] = this->gamePlayVars.guesses.chars[this->gamePlayVars.guesses.yCursor][i];
         answer[i] = this->gamePlayVars.selectedWord[i];
@@ -178,8 +178,19 @@ CheckState Game::checkWord() {
         }
 
         return CheckState::CorrectWord;
+
     }
  
+
+    // QWERT?
+
+    if (guessWord[0] == 81 && guessWord[1] == 87 && guessWord[2] == 69 && guessWord[3] == 82 && guessWord[4] == 84) {
+
+        return CheckState::InvalidWord_Hanski;
+
+    }
+
+
 
     // Get start of words using char one and two of guess ..
 
@@ -191,11 +202,11 @@ CheckState Game::checkWord() {
     switch (this->gamePlayVars.mode) {
 
         case GameMode::English:
-            alphaStart = Dictionary::English_AlphaMap[startPos] * 6;
+            alphaStart = Dictionary::English_AlphaMap[startPos];
             break;
 
         case GameMode::French:
-            alphaStart = Dictionary::French_AlphaMap[startPos] * 6;
+            alphaStart = Dictionary::French_AlphaMap[startPos];
             break;
 
     }
@@ -205,10 +216,12 @@ CheckState Game::checkWord() {
 
     if (alphaStart == 0xFFFF) {
 
-        return CheckState::InvalidWord;
+        return CheckState::InvalidWord; 
 
     }
-    
+
+    alphaStart = alphaStart * 6;
+
     while (true) {
 
         file.seek(alphaStart);
